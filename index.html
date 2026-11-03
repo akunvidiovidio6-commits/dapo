@@ -188,6 +188,67 @@ h2{font:700 18px var(--f-display);letter-spacing:-.01em;margin:28px 0 12px}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 .finder video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.finder::before,.finder::after,.finder i{z-index:2}
+
+/* polish */
+.hero{background:linear-gradient(160deg,color-mix(in srgb,var(--hero) 80%,#fff) 0%,var(--hero) 58%,color-mix(in srgb,var(--hero) 82%,#000) 100%);box-shadow:0 16px 32px -14px rgba(11,93,90,.6)}
+.bal{font-size:44px}
+.quick{border-radius:22px;box-shadow:0 12px 30px -12px rgba(10,40,36,.32)}
+.qa i,.svc i{border-radius:17px;background:linear-gradient(160deg,var(--brand-soft),color-mix(in srgb,var(--brand-soft) 70%,var(--brand)));transition:transform .12s}
+.qa:active i,.svc:active i{transform:scale(.92)}
+.card,.ticket,.sumrow div{border-radius:20px}
+.promo{background:linear-gradient(135deg,var(--brand-soft),color-mix(in srgb,var(--brand-soft) 65%,var(--accent)));border-radius:20px}
+.tx{border-radius:12px;transition:background .12s}
+.tx:active,.crow:active,.merch:active{background:var(--brand-soft)}
+.nav{background:color-mix(in srgb,var(--surface) 86%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.nb[aria-current="page"]{font-weight:800}
+.fab{background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 80%,#fff),var(--accent));box-shadow:0 10px 22px -6px rgba(244,180,42,.7)}
+.btn:not(.ghost){box-shadow:0 10px 20px -10px var(--brand);transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn{border-radius:16px}
+.pinsheet{box-shadow:0 -16px 40px rgba(0,0,0,.25)}
+.pinsheet::before{content:"";display:block;width:40px;height:4px;border-radius:9px;background:var(--line);margin:-6px auto 12px}
+.dots i{width:16px;height:16px;transition:background .12s,transform .12s}
+.dots i.on{transform:scale(1.15)}
+.keys button{border-radius:18px;transition:background .1s,transform .1s}
+.keys button:active:not(:disabled){background:var(--brand-soft);transform:scale(.95)}
+.toast{box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+
+/* liquid glass */
+:root{--g-bg:rgba(255,255,255,.50);--g-line:rgba(255,255,255,.72);--g-hi:rgba(255,255,255,.95);--g-fx:blur(22px) saturate(180%);--g-sh:0 14px 34px -14px rgba(10,40,36,.38)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-bg:rgba(24,44,42,.48);--g-line:rgba(255,255,255,.14);--g-hi:rgba(255,255,255,.2);--g-sh:0 14px 34px -14px rgba(0,0,0,.6)}:root:not([data-theme="light"]) body::before{opacity:.5}}
+:root[data-theme="dark"]{--g-bg:rgba(24,44,42,.48);--g-line:rgba(255,255,255,.14);--g-hi:rgba(255,255,255,.2);--g-sh:0 14px 34px -14px rgba(0,0,0,.6)}
+:root[data-theme="dark"] body::before{opacity:.5}
+body{background:transparent}
+html{background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60vmax 60vmax at 8% -6%,rgba(56,194,179,.6),transparent 62%),radial-gradient(52vmax 52vmax at 104% 22%,rgba(244,180,42,.42),transparent 62%),radial-gradient(64vmax 64vmax at -6% 92%,rgba(90,140,255,.38),transparent 62%),radial-gradient(40vmax 40vmax at 90% 100%,rgba(236,110,170,.28),transparent 62%)}
+.quick,.card,.ticket,.sumrow div,.promo,.nav,.icon-btn,.search,.pinsheet,.toast,.va,.seg,.token{background:var(--g-bg);-webkit-backdrop-filter:var(--g-fx);backdrop-filter:var(--g-fx);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),inset 0 -1px 0 rgba(255,255,255,.12),var(--g-sh)}
+.toast{color:var(--ink)}
+.hero{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 18px 36px -14px rgba(11,93,90,.65);border:1px solid rgba(255,255,255,.22)}
+.hero::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(118deg,rgba(255,255,255,.3),rgba(255,255,255,0) 38%);pointer-events:none}
+.field input,.opt,.bank,.chip,.keys button{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi)}
+.chip[aria-pressed="true"],.opt[aria-pressed="true"],.bank[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:transparent}
+.opt[aria-pressed="true"],.bank[aria-pressed="true"]{background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
+.qa i,.svc i,.tdot{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),0 6px 14px -8px rgba(10,40,36,.4);color:var(--brand)}
+.nav{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));max-width:456px;margin:0 auto;border-radius:32px;padding:3px 6px}
+.toast{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+.pinsheet{border-radius:30px 30px 0 0;-webkit-backdrop-filter:blur(34px) saturate(190%);backdrop-filter:blur(34px) saturate(190%)}
+.pinov{background:rgba(8,20,18,.35)}
+.flow{background:color-mix(in srgb,var(--bg) 55%,transparent);-webkit-backdrop-filter:blur(28px) saturate(160%);backdrop-filter:blur(28px) saturate(160%)}
+.fbar{background:none}
+.btn:not(.ghost){background:linear-gradient(160deg,color-mix(in srgb,var(--brand) 82%,#fff),var(--brand));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 20px -10px var(--brand)}
+.btn.ghost{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--g-bg:var(--surface)}}
+
+/* kaca geser */
+.nav{touch-action:none;-webkit-user-select:none;user-select:none}
+.nav-in{position:relative;z-index:1}
+.lens{position:absolute;left:0;top:4px;bottom:4px;width:0;border-radius:28px;z-index:0;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.7),rgba(255,255,255,.22));border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),inset 0 -8px 14px rgba(255,255,255,.14),0 8px 18px -8px rgba(10,40,36,.45);will-change:transform,width}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lens{background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06))}}
+:root[data-theme="dark"] .lens{background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06))}
+.nav.ready .lens{transition:transform .42s cubic-bezier(.34,1.45,.5,1),width .3s ease}
+.nav.dragging .lens{transition:none;box-shadow:inset 0 1px 0 var(--g-hi),0 16px 28px -10px rgba(10,40,36,.6),0 0 0 2px rgba(255,255,255,.3)}
+.nav.dragging .nb[aria-current="page"]{color:var(--muted)}
+.nav.dragging .nb.peek{color:var(--brand)}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes sweep{from{top:28px}to{top:calc(100% - 30px)}}
 @keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)}}
@@ -195,7 +256,7 @@ h2{font:700 18px var(--f-display);letter-spacing:-.01em;margin:28px 0 12px}
 </style>
 
 <div class="shell"><main id="view"></main></div>
-<nav class="nav" aria-label="Menu utama"><div class="nav-in" id="nav"></div></nav>
+<nav class="nav" aria-label="Menu utama"><i class="lens" id="lens"></i><div class="nav-in" id="nav"></div></nav>
 <div id="flow" class="flow" hidden></div>
 <div id="pin" class="pinov" hidden></div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -325,7 +386,7 @@ function accountView(){
  '<div class="card" style="margin-top:12px">'+
  '<div class="row"><div>Tampilkan saldo<small>Di halaman beranda</small></div>'+sw('sw-hide',!S.hide,'Tampilkan saldo')+'</div>'+
  '<div class="row"><div>Sidik jari untuk PIN<small>Konfirmasi lebih cepat</small></div>'+sw('sw-bio',S.bio,'Sidik jari untuk PIN')+'</div>'+
- '<div class="row"><button class="plain" data-act="toast" data-msg="Ganti PIN belum tersedia di prototipe">Ganti PIN<small>PIN demo: 123456</small></button>'+ic('chev',18)+'</div>'+
+ '<div class="row"><button class="plain" data-act="chpin">Ganti PIN<small>'+(S.pin?'PIN sudah diganti':'Masih PIN bawaan demo')+'</small></button>'+ic('chev',18)+'</div>'+
  '<div class="row"><button class="plain" data-act="toast" data-msg="Pusat bantuan belum tersedia di prototipe">Pusat bantuan</button>'+ic('help',18)+'</div>'+
  '<div class="row"><button class="plain" data-act="admin">Mode admin<small>Khusus pemilik prototipe</small></button>'+ic('lock',18)+'</div></div>'+
  '<button class="btn ghost" style="margin-top:16px" data-act="reset">Reset data demo</button>'}
@@ -333,7 +394,7 @@ function accountView(){
 var NAV=[['home','home','Beranda'],['history','clock','Riwayat'],['scan','scan','Scan'],['promo','gift','Promo'],['account','user','Akun']];
 function renderNav(){$('#nav').innerHTML=NAV.map(function(n){
  if(n[0]==='scan')return '<button class="nb" data-act="flow" data-flow="scan" aria-label="Scan QR"><span class="fab">'+ic('scan',26)+'</span></button>';
- return '<button class="nb" data-act="tab" data-tab="'+n[0]+'"'+(tab===n[0]?' aria-current="page"':'')+'>'+ic(n[1],22)+'<span>'+n[2]+'</span></button>'}).join('')}
+ return '<button class="nb" data-act="tab" data-tab="'+n[0]+'"'+(tab===n[0]?' aria-current="page"':'')+'>'+ic(n[1],22)+'<span>'+n[2]+'</span></button>'}).join('');placeLens()}
 function render(){var v={home:homeView,history:historyView,promo:promoView,account:accountView}[tab]();$('#view').innerHTML=v;renderNav()}
 
 /* ---------- flows ---------- */
@@ -428,7 +489,19 @@ function fAdmin(){var d=F.data;
 
 /* ---------- PIN ---------- */
 function askPin(cb){pinCb=cb;pinBuf='';drawPin('');$('#pin').hidden=false}
-function drawPin(err,shake){$('#pin').innerHTML='<div class="pinsheet" role="dialog" aria-label="Masukkan PIN"><div class="pinhead"><span>Masukkan PIN Dapo</span><button class="icon-btn" data-act="pinx" aria-label="Tutup">'+ic('x',20)+'</button></div><div class="dots'+(shake?' shake':'')+'" aria-hidden="true">'+[0,1,2,3,4,5].map(function(i){return '<i class="'+(i<pinBuf.length?'on':'')+'"></i>'}).join('')+'</div><p class="pinmsg'+(err?' err':'')+'" role="alert">'+(err||'PIN demo: 123456')+'</p><div class="keys">'+[1,2,3,4,5,6,7,8,9].map(function(k){return '<button data-act="k" data-k="'+k+'">'+k+'</button>'}).join('')+'<button data-act="fp" aria-label="Sidik jari"'+(S.bio?'':' disabled')+'>'+ic('finger',26)+'</button><button data-act="k" data-k="0">0</button><button data-act="kb" aria-label="Hapus">'+ic('backspace',26)+'</button></div></div>'}
+var pinMode=null,newPin='',PT={v:'Masukkan PIN Dapo',n:'Buat PIN baru',c:'Ulangi PIN baru'};
+function curPin(){return S.pin||PIN}
+function pinHint(){return pinMode==='n'?'Pilih 6 angka yang tidak mudah ditebak':pinMode==='c'?'Masukkan PIN baru sekali lagi':(S.pin?'':'PIN demo: 123456')}
+function changePin(){askPin(function(){pinMode='n';pinBuf='';newPin='';drawPin('');$('#pin').hidden=false})}
+function pinDone(){
+ if(pinMode==='n'){
+  if(/^(\d)\1{5}$/.test(pinBuf)||'0123456789012345'.indexOf(pinBuf)>-1||'9876543210987654'.indexOf(pinBuf)>-1){pinBuf='';drawPin('PIN terlalu mudah ditebak. Coba yang lain.',true);return}
+  newPin=pinBuf;pinBuf='';pinMode='c';drawPin('');return}
+ if(pinMode==='c'){
+  if(pinBuf!==newPin){pinBuf='';newPin='';pinMode='n';drawPin('PIN tidak sama. Buat ulang.',true);return}
+  S.pin=newPin;save();pinMode=null;newPin='';pinBuf='';pinCb=null;$('#pin').hidden=true;toast('PIN berhasil diganti');render();return}
+ if(pinBuf===curPin())pinOk();else{pinBuf='';drawPin('PIN salah. Coba lagi.',true)}}
+function drawPin(err,shake){$('#pin').innerHTML='<div class="pinsheet" role="dialog" aria-label="Masukkan PIN"><div class="pinhead"><span>'+PT[pinMode||'v']+'</span><button class="icon-btn" data-act="pinx" aria-label="Tutup">'+ic('x',20)+'</button></div><div class="dots'+(shake?' shake':'')+'" aria-hidden="true">'+[0,1,2,3,4,5].map(function(i){return '<i class="'+(i<pinBuf.length?'on':'')+'"></i>'}).join('')+'</div><p class="pinmsg'+(err?' err':'')+'" role="alert">'+(err||pinHint())+'</p><div class="keys">'+[1,2,3,4,5,6,7,8,9].map(function(k){return '<button data-act="k" data-k="'+k+'">'+k+'</button>'}).join('')+'<button data-act="fp" aria-label="Sidik jari"'+(S.bio&&!pinMode?'':' disabled')+'>'+ic('finger',26)+'</button><button data-act="k" data-k="0">0</button><button data-act="kb" aria-label="Hapus">'+ic('backspace',26)+'</button></div></div>'}
 function pinOk(){$('#pin').hidden=true;var cb=pinCb;pinCb=null;if(cb)cb()}
 
 /* ---------- scan QRIS ---------- */
@@ -496,15 +569,16 @@ var A={
  pickc:function(){navigator.contacts.select(['name','tel'],{multiple:false}).then(function(r){var c=r&&r[0];if(!c||!c.tel||!c.tel[0])return;var p=c.tel[0].replace(/\D/g,'').replace(/^\+?62/,'0');F.data.to={n:(c.name&&c.name[0])||fmtPhone(p),p:p};F.step=1;renderFlow()},function(){})},
  qrtxt:function(){var v=($('#qrtxt')||{}).value||'';if(!v.trim()){toast('Tempel kode QRIS dulu');return}gotQR(v)},
  admin:function(){openFlow('admin')},
+ chpin:function(){changePin()},
  'adm-login':function(){var u=($('#adm-u').value||'').trim().toLowerCase(),p=$('#adm-p').value||'';if(u==='nafis'&&p==='0808'){F.step=1;F.data.amount=0;renderFlow()}else{$('#hint').textContent='Nama atau kode admin salah.'}},
  'adm-add':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}addTx({type:'in',title:'Penyesuaian admin',sub:'Tambah saldo demo',amt:a});F.data.amount=0;renderFlow(true);toast('Saldo ditambah '+rp(a))},
  'adm-sub':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}if(a>S.bal){toast('Nominal melebihi saldo');return}addTx({type:'out',title:'Penyesuaian admin',sub:'Kurangi saldo demo',amt:-a});F.data.amount=0;renderFlow(true);toast('Saldo dikurangi '+rp(a))},
  'adm-set':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}var diff=a-S.bal;if(!diff){toast('Saldo sudah '+rp(a));return}addTx({type:diff>0?'in':'out',title:'Penyesuaian admin',sub:'Set saldo demo',amt:diff});F.data.amount=0;renderFlow(true);toast('Saldo diatur ke '+rp(a))},
  'reset-adm':function(){S=seed();save();F.data.amount=0;renderFlow(true);toast('Data demo dikembalikan')},
- pinx:function(){$('#pin').hidden=true;pinCb=null},
- k:function(t){if(pinBuf.length>=6)return;pinBuf+=t.dataset.k;drawPin('');if(pinBuf.length===6)setTimeout(function(){if(pinBuf===PIN)pinOk();else{pinBuf='';drawPin('PIN salah. Coba lagi.',true)}},140)},
+ pinx:function(){$('#pin').hidden=true;pinCb=null;pinMode=null;newPin='';pinBuf=''},
+ k:function(t){if(pinBuf.length>=6)return;pinBuf+=t.dataset.k;drawPin('');if(pinBuf.length===6)setTimeout(pinDone,140)},
  kb:function(){pinBuf=pinBuf.slice(0,-1);drawPin('')},
- fp:function(){if(S.bio)pinOk()}
+ fp:function(){if(S.bio&&!pinMode)pinOk()}
 };
 document.addEventListener('click',function(e){var t=e.target.closest('[data-act]');if(!t)return;var f=A[t.dataset.act];if(f)f(t)});
 document.addEventListener('input',function(e){var t=e.target;if(!F)return;
@@ -517,6 +591,30 @@ document.addEventListener('change',function(e){var t=e.target;if(t.id!=='qrfile'
  var u=URL.createObjectURL(t.files[0]),im=new Image();
  im.onload=function(){decodeQR(im,im.naturalWidth,im.naturalHeight,1400).then(function(r){URL.revokeObjectURL(u);if(r)gotQR(r);else toast('QR tidak terbaca. Coba foto yang lebih jelas')})};
  im.onerror=function(){toast('Gambar tidak bisa dibuka')};im.src=u;t.value=''});
+
+/* ---------- menu bawah: kaca bisa digeser ---------- */
+function placeLens(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens');if(!nav||!lens)return;
+ var b=nav.querySelector('.nb[aria-current="page"]');if(!b){lens.style.opacity=0;return}
+ var nr=nav.getBoundingClientRect(),br=b.getBoundingClientRect();
+ lens.style.opacity=1;lens.style.width=(br.width-8)+'px';lens.style.transform='translateX('+(br.left-nr.left+4)+'px)';
+ if(!nav.classList.contains('ready')){void lens.offsetWidth;nav.classList.add('ready')}}
+(function(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens'),st=null,swallow=false;
+ function tabsBtn(){return [].slice.call(nav.querySelectorAll('.nb[data-tab]'))}
+ function geo(){var nr=nav.getBoundingClientRect(),bs=tabsBtn(),r=bs.map(function(b){var x=b.getBoundingClientRect();return {b:b,l:x.left-nr.left+4,w:x.width-8}});return r}
+ function nearest(left,w){var r=geo(),c=left+w/2,best=r[0];r.forEach(function(o){if(Math.abs(o.l+o.w/2-c)<Math.abs(best.l+best.w/2-c))best=o});return best}
+ nav.addEventListener('pointerdown',function(e){var g=geo(),cur=g.filter(function(o){return o.b.getAttribute('aria-current')==='page'})[0];if(!cur)return;st={x:e.clientX,left:cur.l,w:cur.w,drag:false,id:e.pointerId,min:g[0].l,max:g[g.length-1].l}});
+ nav.addEventListener('pointermove',function(e){if(!st)return;var dx=e.clientX-st.x;
+  if(!st.drag){if(Math.abs(dx)<8)return;st.drag=true;nav.classList.add('dragging');try{nav.setPointerCapture(st.id)}catch(_){}}
+  var left=Math.max(st.min,Math.min(st.max,st.left+dx));st.cur=left;
+  lens.style.transform='translateX('+left+'px) scale(1.14,1.1)';
+  var n=nearest(left,st.w);tabsBtn().forEach(function(b){b.classList.toggle('peek',b===n.b)})});
+ function end(){if(!st)return;var s=st;st=null;if(!s.drag)return;
+  nav.classList.remove('dragging');swallow=true;setTimeout(function(){swallow=false},60);
+  var n=nearest(s.cur==null?s.left:s.cur,s.w);tabsBtn().forEach(function(b){b.classList.remove('peek')});
+  if(n.b.dataset.tab&&n.b.dataset.tab!==tab){tab=n.b.dataset.tab;render();window.scrollTo(0,0)}else placeLens()}
+ nav.addEventListener('pointerup',end);nav.addEventListener('pointercancel',end);
+ nav.addEventListener('click',function(e){if(swallow){e.stopPropagation();e.preventDefault()}},true);
+ window.addEventListener('resize',placeLens);window.addEventListener('load',placeLens)})();
 
 render();
 })();
