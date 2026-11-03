@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Dapo</title><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEZElEQVR4nO3d0W0bMRBFUSbInwtIG+kmgAEXmG7SRrrIBwFiYfvJkpbkvJm95zuxSO7dWcNK5G8vb68N+Mz36AXAF3FAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigPQjegFh/v3+e/8f/vnn16p1GLtQHA/VcPvvXqSV+nGcaeLLr1m7krJxrGjixquUrKRgHHuy+PRFiyVSKo6QLD4uoEwiReIIz+KoTCLp47DK4qhAIrl/CGZbxuC/whuyTo5Eh553hKScHInKGDKuOV8cGU+5S7fyTI+VdIf7Ua5HTJrJUaCMIctecsSR5TTvl2JHCeJIcY5P8N+Xexz+J3iG+e6s4zA/uymc92gdB2L5xuF8S81lu1PTOGzPaxHP/TrG4XlSqxnu2jEOmLCLw/AG2sZt715xuJ3OflYn4BUHrBi9Kxt109x4jzTqH7KbvG1rFMdOd57+8Y9ZDfw9vr28vUavobWNR3/ypsyyzikuNDmmHHf/IheZIhbfkG4467k34obb2qG/+pNj0YW8wgiJnxxLz3f1Lb7064eXFx/HOnu+p3P4znGRsnHsvGZV+wiOY9Hk3H+1Fr1i7JOl7OTAeQXjiBry9R4ukXGsmJmxV2jFqwc+WQpODsxSKg6Hwe6whllKxYG56sThc8v6rOSksDjCfzacSNRZ1ZkcmI44IBWJw+0x77ae5xSJAysQByTigEQckIgDEnFAIg5IxAGpSBxu79S4rec5ReLACsQBKSyOGu8+7BF1VnUmh89j3mclJ9WJA9OVisPhlnVYwyyl4sBckXEU+y9Ai1498Dv3gpMjqo9KD5SuYByYJTiOMp9cUOazJI7KTo6dfdR7oHRl42i7rlnVMppDHKk/cy31p919qf5HTS76JdCFB8YQPzlaws98Tfepus+pPzmGKSPkCgNjcPlg/Lb33J9IxHx5K1xochwdr7Tb71vxYTQ52uUvRmcyNprJN6Tw5BWHz00TxeoEvOJoZqezmdve7eKAD8c43G6gPQx37RhHszyppTz3axpHcz2vFWx36hsHwlnHYXtLTeS8R+s4mvfZnWe+O/c4mv0JPs1/XwniaBnO8VEpdpQjjpbkNO+UZS+Z3rIv8Eugs2TRpZkcQ67zPUq38nxxtISn3HKuOdNj5SjRIyZjFl3KyTH4n7v/Cm/IOjkG2xGSOosufRydVSIFsuiKxNGFJ1Imi65UHF1IIsWy6ArG0Y2rVfv/Oi9VNo5hRSW1mxjqxzG8u6IPtXKRGt65UBzvXPN6PyT3D8GwFHFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6T/nXMzsm/kCPIAAAAASUVORK5CYII="><meta name="theme-color" content="#0B5D5A"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dapo"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="claude:viewport-fit-sides" content="cover"><script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@400..700&display=swap">
 <style>
 :root{
@@ -187,6 +187,7 @@ h2{font:700 18px var(--f-display);letter-spacing:-.01em;margin:28px 0 12px}
 .toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);z-index:50;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font:600 14px var(--f-body);max-width:min(90vw,420px);text-align:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+.finder video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.finder::before,.finder::after,.finder i{z-index:2}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes sweep{from{top:28px}to{top:calc(100% - 30px)}}
 @keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)}}
@@ -202,7 +203,7 @@ h2{font:700 18px var(--f-display);letter-spacing:-.01em;margin:28px 0 12px}
 <script>
 (function(){
 'use strict';
-var KEY='dapo.demo.v1',PIN='123456',H=3600000,D=86400000;
+var KEY='dapo.demo.v1',PIN='123456',TOPUP=100000000,H=3600000,D=86400000;
 var $=function(s,r){return (r||document).querySelector(s)};
 var num=function(v){return parseInt(String(v).replace(/\D/g,''),10)||0};
 var rp=function(v){return 'Rp'+Math.abs(v).toLocaleString('id-ID')};
@@ -291,7 +292,7 @@ function homeView(){
  '<section class="hero" aria-label="Saldo"><svg class="arcs" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="105"/></svg>'+
  '<div class="hero-row"><span class="lbl">Saldo Dapo</span><button class="eye" data-act="eye" aria-label="'+(S.hide?'Tampilkan':'Sembunyikan')+' saldo">'+ic(S.hide?'eyeoff':'eye',20)+'</button></div>'+
  '<div class="bal">'+(S.hide?'Rp ••••••':rp(S.bal))+'</div>'+
- '<div class="hero-foot"><span class="pill">Dapo Plus</span><span>Limit saldo Rp20.000.000</span></div></section>'+
+ '<div class="hero-foot"><span class="pill">Dapo Plus</span><span>Limit saldo Rp200.000.000</span></div></section>'+
  '<div class="quick">'+qa.map(function(q){return '<button class="qa" data-act="flow" data-flow="'+q[0]+'"><i>'+ic(q[1],22)+'</i><span>'+q[2]+'</span></button>'}).join('')+'</div>'+
  '<h2>Layanan</h2><div class="grid">'+SV.map(function(s){return '<button class="svc" data-act="svc" data-k="'+s[0]+'"><i>'+ic(s[1],22)+'</i><span>'+s[2]+'</span></button>'}).join('')+'</div>'+
  '<h2>Promo untukmu</h2><div class="strip">'+PROMO.map(promoCard).join('')+'</div>'+
@@ -316,11 +317,11 @@ function promoView(){return '<header class="top"><h2 style="margin:0">Promo</h2>
 
 function sw(id,on,label){return '<button class="sw" role="switch" aria-checked="'+on+'" aria-label="'+label+'" data-act="'+id+'"></button>'}
 function accountView(){
- var pct=Math.min(100,Math.round(S.bal/20000000*100));
+ var pct=Math.min(100,Math.round(S.bal/200000000*100));
  return '<header class="top"><h2 style="margin:0">Akun</h2></header>'+
  '<div class="card"><div class="prof">'+avatar('Akun Demo')+'<div><b>Akun Demo</b><br><span class="muted">'+fmtPhone(MY_PHONE)+'</span></div></div></div>'+
  '<div class="card" style="margin-top:12px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><b>Dapo Plus</b><span class="pill">Terverifikasi</span></div>'+
- '<div class="meter" role="img" aria-label="Saldo terpakai '+pct+' persen dari limit"><i style="width:'+Math.max(pct,2)+'%"></i></div><small class="muted">'+rp(S.bal)+' dari limit Rp20.000.000</small></div>'+
+ '<div class="meter" role="img" aria-label="Saldo terpakai '+pct+' persen dari limit"><i style="width:'+Math.max(pct,2)+'%"></i></div><small class="muted">'+rp(S.bal)+' dari limit Rp200.000.000</small></div>'+
  '<div class="card" style="margin-top:12px">'+
  '<div class="row"><div>Tampilkan saldo<small>Di halaman beranda</small></div>'+sw('sw-hide',!S.hide,'Tampilkan saldo')+'</div>'+
  '<div class="row"><div>Sidik jari untuk PIN<small>Konfirmasi lebih cepat</small></div>'+sw('sw-bio',S.bio,'Sidik jari untuk PIN')+'</div>'+
@@ -339,13 +340,13 @@ function render(){var v={home:homeView,history:historyView,promo:promoView,accou
 function shell(title,body,bar,back){return '<div class="flow-in"><header class="fh">'+(back===false?'':'<button class="icon-btn" data-act="back" aria-label="Kembali">'+ic('back')+'</button>')+'<h1>'+title+'</h1></header><div class="fbody">'+body+'</div>'+(bar?'<div class="fbar">'+bar+'</div>':'')+'</div>'}
 function rows(l){return '<dl class="rows">'+l.filter(Boolean).map(function(r){return '<div><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>'}).join('')+'</dl>'}
 function openFlow(name,data){F={name:name,step:0,done:false,data:data||{}};$('#flow').hidden=false;document.documentElement.classList.add('lock');renderFlow()}
-function closeFlow(){F=null;$('#flow').hidden=true;document.documentElement.classList.remove('lock');render()}
+function closeFlow(){stopCam();F=null;$('#flow').hidden=true;document.documentElement.classList.remove('lock');render()}
 function renderFlow(keep){var el=$('#flow'),st=el.scrollTop;if(!F)return;
  var fn={send:fSend,topup:fTopup,bill:fBill,pay:fPay,scan:fScan,request:fRequest,detail:fDetail,admin:fAdmin}[F.name];
- el.innerHTML=fn();el.scrollTop=keep?st:0;sync()}
+ el.innerHTML=fn();el.scrollTop=keep?st:0;sync();if(F.name==='scan'&&F.data.tab!=='mine')startCam();else stopCam()}
 function valid(){var d=F.data,a=d.amount||0;
  if(F.name==='send'&&F.step===1){if(a>S.bal)return {ok:false,msg:'Saldo tidak cukup. Top up dulu.'};if(a>0&&a<1000)return {ok:false,msg:'Minimal Rp1.000'};return {ok:a>=1000,msg:''}}
- if(F.name==='topup'&&F.step===0){if(a>0&&a<10000)return {ok:false,msg:'Minimal top up Rp10.000'};if(a>10000000)return {ok:false,msg:'Maksimal Rp10.000.000'};return {ok:!!d.bank&&a>=10000,msg:''}}
+ if(F.name==='topup'&&F.step===0){if(a>0&&a<10000)return {ok:false,msg:'Minimal top up Rp10.000'};if(a>TOPUP)return {ok:false,msg:'Maksimal top up Rp100.000.000'};return {ok:!!d.bank&&a>=10000,msg:''}}
  if(F.name==='pay'&&F.step===0){if(d.m.fixed)return {ok:d.m.fixed<=S.bal,msg:d.m.fixed>S.bal?'Saldo tidak cukup. Top up dulu.':''};if(a>S.bal)return {ok:false,msg:'Saldo tidak cukup. Top up dulu.'};if(a>0&&a<500)return {ok:false,msg:'Minimal Rp500'};return {ok:a>=500,msg:''}}
  if(F.name==='request'&&F.step===0){if(a>0&&a<1000)return {ok:false,msg:'Minimal Rp1.000'};return {ok:a>=1000,msg:''}}
  if(F.name==='bill'&&F.step===0){var B=BILLS[d.kind],len=(d.cid||'').length;if(len>0&&len<B.min)return {ok:false,msg:'Nomor minimal '+B.min+' digit'};return {ok:len>=B.min&&(B.mode==='inquiry'||!!d.opt),msg:''}}
@@ -368,7 +369,7 @@ function contactList(q){q=(q||'').trim().toLowerCase();var dg=q.replace(/\D/g,''
  CONTACTS.filter(function(c){return !q||c.n.toLowerCase().indexOf(q)>-1||(dg&&c.p.indexOf(dg)>-1)}).forEach(function(c){h+=row(c.n,c.p)});
  return h||'<p class="muted pad">Kontak tidak ditemukan. Ketik nomor HP lengkap.</p>'}
 function fSend(){var d=F.data;
- if(F.step===0)return shell('Kirim uang','<label class="search">'+ic('search',20)+'<input id="to" placeholder="Nama atau nomor HP" autocomplete="off" aria-label="Cari penerima"></label><div class="label">Kontak</div><div id="clist">'+contactList('')+'</div>');
+ if(F.step===0)return shell('Kirim uang','<label class="search">'+ic('search',20)+'<input id="to" placeholder="Nama atau nomor HP" autocomplete="off" aria-label="Cari penerima"></label>'+(navigator.contacts&&navigator.contacts.select?'<button class="btn ghost" data-act="pickc">Pilih dari kontak HP</button>':'')+'<div class="label">Kontak</div><div id="clist">'+contactList('')+'</div>');
  if(F.step===1)return shell('Nominal','<div class="who">'+avatar(d.to.n)+'<span><b>'+esc(d.to.n)+'</b><span class="muted">'+fmtPhone(d.to.p)+'</span></span></div>'+amtBox(d.amount)+quickChips([10000,25000,50000,100000])+
   '<label class="field"><span>Catatan (opsional)</span><input id="note" maxlength="60" placeholder="Contoh: patungan makan" value="'+esc(d.note||'')+'"></label><p class="muted">Saldo Dapo '+rp(S.bal)+' · Biaya kirim gratis</p>',
   '<button id="cta" class="btn" data-act="next" disabled>Lanjut</button>');
@@ -417,7 +418,7 @@ function qr(seed){var N=25,h=2166136261>>>0,i;for(i=0;i<seed.length;i++){h^=seed
 function fScan(){var t=F.data.tab||'scan';
  var seg='<div class="seg"><button data-act="stab" data-t="scan" aria-pressed="'+(t==='scan')+'">Scan</button><button data-act="stab" data-t="mine" aria-pressed="'+(t==='mine')+'">QR Saya</button></div>';
  if(t==='mine')return shell('QR Dapo',seg+'<div class="qrbox">'+qr('dapo-'+MY_PHONE)+'</div><div class="center"><b>Akun Demo</b><p class="muted">'+fmtPhone(MY_PHONE)+'</p></div><p class="muted center" style="font-size:12.5px">Tunjukkan kode ini untuk menerima uang. Kode contoh, belum bisa dipindai.</p>');
- return shell('Scan QR',seg+'<div class="finder"><i></i></div><p class="muted center">Kamera tidak aktif di prototipe. Pilih merchant di bawah untuk mencoba bayar QR.</p><div class="label">Coba merchant demo</div><div>'+MERCH.map(function(m,i){return '<button class="merch" data-act="merch" data-i="'+i+'"><span class="tdot">'+ic('store',20)+'</span><span><b>'+esc(m.n)+'</b><small>'+esc(m.loc)+'</small></span>'+ic('chev',18)+'</button>'}).join('')+'</div>')}
+ return shell('Scan QR',seg+'<div class="finder"><video id="cam" playsinline muted></video><i></i></div><p id="camst" class="muted center" role="status">Menyalakan kamera…</p><label class="btn ghost" style="text-align:center;display:block">Upload foto QRIS<input id="qrfile" type="file" accept="image/*" hidden></label><label class="field"><span>Atau tempel kode QRIS</span><input id="qrtxt" autocomplete="off" placeholder="000201…"></label><button class="btn ghost" data-act="qrtxt">Proses kode</button><div class="label">Coba merchant demo</div><div>'+MERCH.map(function(m,i){return '<button class="merch" data-act="merch" data-i="'+i+'"><span class="tdot">'+ic('store',20)+'</span><span><b>'+esc(m.n)+'</b><small>'+esc(m.loc)+'</small></span>'+ic('chev',18)+'</button>'}).join('')+'</div>')}
 function fDetail(){var t=F.data.tx,inc=t.amt>0;return shell('Detail transaksi','<div class="center"><span class="tdot'+(inc?' in':'')+'" style="margin:0 auto 8px;width:56px;height:56px">'+ic(inc?'inn':'out',26)+'</span><div class="bigamt">'+(inc?'+':'−')+rp(t.amt)+'</div><p class="muted">'+esc(t.title)+'</p></div><div class="ticket">'+rows([['Keterangan',esc(t.sub)],['Waktu',longDate(t.ts)],['ID transaksi',t.id],['Status','Berhasil']])+'</div>','<button class="btn ghost" data-act="close">Tutup</button>')}
 
 /* admin */
@@ -429,6 +430,30 @@ function fAdmin(){var d=F.data;
 function askPin(cb){pinCb=cb;pinBuf='';drawPin('');$('#pin').hidden=false}
 function drawPin(err,shake){$('#pin').innerHTML='<div class="pinsheet" role="dialog" aria-label="Masukkan PIN"><div class="pinhead"><span>Masukkan PIN Dapo</span><button class="icon-btn" data-act="pinx" aria-label="Tutup">'+ic('x',20)+'</button></div><div class="dots'+(shake?' shake':'')+'" aria-hidden="true">'+[0,1,2,3,4,5].map(function(i){return '<i class="'+(i<pinBuf.length?'on':'')+'"></i>'}).join('')+'</div><p class="pinmsg'+(err?' err':'')+'" role="alert">'+(err||'PIN demo: 123456')+'</p><div class="keys">'+[1,2,3,4,5,6,7,8,9].map(function(k){return '<button data-act="k" data-k="'+k+'">'+k+'</button>'}).join('')+'<button data-act="fp" aria-label="Sidik jari"'+(S.bio?'':' disabled')+'>'+ic('finger',26)+'</button><button data-act="k" data-k="0">0</button><button data-act="kb" aria-label="Hapus">'+ic('backspace',26)+'</button></div></div>'}
 function pinOk(){$('#pin').hidden=true;var cb=pinCb;pinCb=null;if(cb)cb()}
+
+/* ---------- scan QRIS ---------- */
+var cam={stream:null,raf:0,warn:0};
+function stopCam(){cancelAnimationFrame(cam.raf);if(cam.stream){cam.stream.getTracks().forEach(function(t){t.stop()});cam.stream=null}}
+function decodeQR(src,w,h,max){return new Promise(function(res){
+ var k=Math.min(1,max/Math.max(w,h)),cw=Math.round(w*k),ch=Math.round(h*k),c=document.createElement('canvas');c.width=cw;c.height=ch;
+ var x=c.getContext('2d',{willReadFrequently:true});x.drawImage(src,0,0,cw,ch);
+ var js=function(){try{var im=x.getImageData(0,0,cw,ch),r=window.jsQR&&jsQR(im.data,cw,ch);res(r?r.data:null)}catch(e){res(null)}};
+ if(window.BarcodeDetector){try{new BarcodeDetector({formats:['qr_code']}).detect(c).then(function(a){a.length?res(a[0].rawValue):js()},js);return}catch(e){}}
+ js()})}
+function parseQris(s){s=String(s).trim();if(s.indexOf('000201')!==0)return null;var o={},i=0;
+ while(i+4<=s.length){var tg=s.substr(i,2),ln=parseInt(s.substr(i+2,2),10);if(isNaN(ln))break;o[tg]=s.substr(i+4,ln);i+=4+ln}
+ if(!o['59'])return null;var a=parseFloat(o['54']||'0');return {n:o['59'],loc:o['60']||'',fixed:a>0?Math.round(a):0}}
+function gotQR(t){var q=parseQris(t);
+ if(!q){if(Date.now()-cam.warn>2500){cam.warn=Date.now();toast('QR ini bukan QRIS')}return}
+ stopCam();openFlow('pay',{m:{n:q.n,loc:(q.loc?q.loc+' · ':'')+'QRIS',fixed:q.fixed},amount:q.fixed})}
+function startCam(){stopCam();var v=$('#cam'),st=$('#camst');if(!v)return;
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){st.textContent='Kamera tidak didukung. Pakai upload foto QRIS.';return}
+ navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false}).then(function(s){
+  if(!F||F.name!=='scan'||F.data.tab==='mine'){s.getTracks().forEach(function(t){t.stop()});return}
+  cam.stream=s;v.srcObject=s;v.play();st.textContent='Arahkan kamera ke kode QRIS';var busy=false;
+  (function loop(){cam.raf=requestAnimationFrame(loop);if(busy||v.readyState<2||!v.videoWidth)return;busy=true;
+   decodeQR(v,v.videoWidth,v.videoHeight,640).then(function(r){busy=false;if(r&&cam.stream)gotQR(r)})})()
+ },function(){st.textContent='Izin kamera ditolak. Pakai upload foto QRIS di bawah.'})}
 
 /* ---------- actions ---------- */
 function startBill(k){if(!BILLS[k]){toast('Segera hadir di prototipe');return}openFlow('bill',{kind:k})}
@@ -450,7 +475,7 @@ var A={
  close:function(){closeFlow()},
  back:function(){if(!F)return;if(F.step>0&&!F.done){F.step--;renderFlow()}else closeFlow()},
  stab:function(t){F.data.tab=t.dataset.t;renderFlow()},
- merch:function(t){var m=MERCH[+t.dataset.i];openFlow('pay',{m:m,amount:m.fixed||0})},
+ merch:function(t){stopCam();var m=MERCH[+t.dataset.i];openFlow('pay',{m:m,amount:m.fixed||0})},
  pick:function(t){F.data.to={n:t.dataset.n,p:t.dataset.p};F.step=1;renderFlow()},
  setamt:function(t){F.data.amount=+t.dataset.v;var i=$('#amt');if(i)i.value=fmtAmt(F.data.amount);sync()},
  bank:function(t){F.data.bank=BANKS.filter(function(b){return b.id===t.dataset.id})[0];renderFlow(true)},
@@ -468,6 +493,8 @@ var A={
   askPin(function(){d.tx=addTx({type:'out',title:m.n,sub:'Bayar QR',amt:-a});d.cb=0;
    if(a>=20000){d.cb=Math.floor(a*0.02);addTx({type:'in',title:'Cashback '+m.n,sub:'Promo cashback 2%',amt:d.cb})}
    F.step=1;F.done=true;renderFlow()})},
+ pickc:function(){navigator.contacts.select(['name','tel'],{multiple:false}).then(function(r){var c=r&&r[0];if(!c||!c.tel||!c.tel[0])return;var p=c.tel[0].replace(/\D/g,'').replace(/^\+?62/,'0');F.data.to={n:(c.name&&c.name[0])||fmtPhone(p),p:p};F.step=1;renderFlow()},function(){})},
+ qrtxt:function(){var v=($('#qrtxt')||{}).value||'';if(!v.trim()){toast('Tempel kode QRIS dulu');return}gotQR(v)},
  admin:function(){openFlow('admin')},
  'adm-login':function(){var u=($('#adm-u').value||'').trim().toLowerCase(),p=$('#adm-p').value||'';if(u==='nafis'&&p==='0808'){F.step=1;F.data.amount=0;renderFlow()}else{$('#hint').textContent='Nama atau kode admin salah.'}},
  'adm-add':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}addTx({type:'in',title:'Penyesuaian admin',sub:'Tambah saldo demo',amt:a});F.data.amount=0;renderFlow(true);toast('Saldo ditambah '+rp(a))},
@@ -485,6 +512,11 @@ document.addEventListener('input',function(e){var t=e.target;if(!F)return;
  else if(t.id==='note')F.data.note=t.value;
  else if(t.id==='to'){$('#clist').innerHTML=contactList(t.value)}
  else if(t.id==='cid'){F.data.cid=t.value.replace(/\D/g,'');t.value=F.data.cid;sync()}});
+
+document.addEventListener('change',function(e){var t=e.target;if(t.id!=='qrfile'||!t.files[0])return;
+ var u=URL.createObjectURL(t.files[0]),im=new Image();
+ im.onload=function(){decodeQR(im,im.naturalWidth,im.naturalHeight,1400).then(function(r){URL.revokeObjectURL(u);if(r)gotQR(r);else toast('QR tidak terbaca. Coba foto yang lebih jelas')})};
+ im.onerror=function(){toast('Gambar tidak bisa dibuka')};im.src=u;t.value=''});
 
 render();
 })();
