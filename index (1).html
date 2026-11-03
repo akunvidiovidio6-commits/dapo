@@ -1,0 +1,652 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dapo</title><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEZElEQVR4nO3d0W0bMRBFUSbInwtIG+kmgAEXmG7SRrrIBwFiYfvJkpbkvJm95zuxSO7dWcNK5G8vb68N+Mz36AXAF3FAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigPQjegFh/v3+e/8f/vnn16p1GLtQHA/VcPvvXqSV+nGcaeLLr1m7krJxrGjixquUrKRgHHuy+PRFiyVSKo6QLD4uoEwiReIIz+KoTCLp47DK4qhAIrl/CGZbxuC/whuyTo5Eh553hKScHInKGDKuOV8cGU+5S7fyTI+VdIf7Ua5HTJrJUaCMIctecsSR5TTvl2JHCeJIcY5P8N+Xexz+J3iG+e6s4zA/uymc92gdB2L5xuF8S81lu1PTOGzPaxHP/TrG4XlSqxnu2jEOmLCLw/AG2sZt715xuJ3OflYn4BUHrBi9Kxt109x4jzTqH7KbvG1rFMdOd57+8Y9ZDfw9vr28vUavobWNR3/ypsyyzikuNDmmHHf/IheZIhbfkG4467k34obb2qG/+pNj0YW8wgiJnxxLz3f1Lb7064eXFx/HOnu+p3P4znGRsnHsvGZV+wiOY9Hk3H+1Fr1i7JOl7OTAeQXjiBry9R4ukXGsmJmxV2jFqwc+WQpODsxSKg6Hwe6whllKxYG56sThc8v6rOSksDjCfzacSNRZ1ZkcmI44IBWJw+0x77ae5xSJAysQByTigEQckIgDEnFAIg5IxAGpSBxu79S4rec5ReLACsQBKSyOGu8+7BF1VnUmh89j3mclJ9WJA9OVisPhlnVYwyyl4sBckXEU+y9Ai1498Dv3gpMjqo9KD5SuYByYJTiOMp9cUOazJI7KTo6dfdR7oHRl42i7rlnVMppDHKk/cy31p919qf5HTS76JdCFB8YQPzlaws98Tfepus+pPzmGKSPkCgNjcPlg/Lb33J9IxHx5K1xochwdr7Tb71vxYTQ52uUvRmcyNprJN6Tw5BWHz00TxeoEvOJoZqezmdve7eKAD8c43G6gPQx37RhHszyppTz3axpHcz2vFWx36hsHwlnHYXtLTeS8R+s4mvfZnWe+O/c4mv0JPs1/XwniaBnO8VEpdpQjjpbkNO+UZS+Z3rIv8Eugs2TRpZkcQ67zPUq38nxxtISn3HKuOdNj5SjRIyZjFl3KyTH4n7v/Cm/IOjkG2xGSOosufRydVSIFsuiKxNGFJ1Imi65UHF1IIsWy6ArG0Y2rVfv/Oi9VNo5hRSW1mxjqxzG8u6IPtXKRGt65UBzvXPN6PyT3D8GwFHFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6T/nXMzsm/kCPIAAAAASUVORK5CYII="><meta name="theme-color" content="#0B5D5A"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dapo"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="claude:viewport-fit-sides" content="cover"><script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@400..700&display=swap">
+<style>
+:root{
+  /* Layout: single-column phone wallet. Teal balance card with a raised quick-action tray, 4-col service grid, bottom nav with a raised amber scan button. */
+  --bg:#F1F5F2; --surface:#FFFFFF; --ink:#12201E; --muted:#5B6F6B; --line:#DAE3DF;
+  --brand:#0B5D5A; --brand-ink:#FFFFFF; --brand-soft:#DCEDE9;
+  --hero:#0B5D5A; --hero-ink:#F2FBF9; --hero-mute:#A9D3CD;
+  --accent:#F4B42A; --accent-ink:#2B1F00;
+  --good:#177E52; --bad:#B8402C;
+  --qr-bg:#FFFFFF; --qr-fg:#0B1F1D; --scan-bg:#0B1B19; --av-l:86%;
+  --shadow:0 1px 2px rgba(10,40,36,.06),0 8px 22px rgba(10,40,36,.07);
+  --f-display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --f-body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r-m:16px; --r-l:24px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1413; --surface:#13221F; --ink:#E6F0EE; --muted:#8FA6A1; --line:#223531;
+  --brand:#38C2B3; --brand-ink:#03201C; --brand-soft:#173532;
+  --hero:#0F4B48; --hero-ink:#F0FAF8; --hero-mute:#8FC9C1;
+  --good:#4BC98F; --bad:#F08A76; --av-l:26%; --shadow:0 1px 0 rgba(255,255,255,.03);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1413; --surface:#13221F; --ink:#E6F0EE; --muted:#8FA6A1; --line:#223531;
+  --brand:#38C2B3; --brand-ink:#03201C; --brand-soft:#173532;
+  --hero:#0F4B48; --hero-ink:#F0FAF8; --hero-mute:#8FC9C1;
+  --good:#4BC98F; --bad:#F08A76; --av-l:26%; --shadow:0 1px 0 rgba(255,255,255,.03);
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.45 var(--f-body);-webkit-text-size-adjust:100%}
+html.lock,html.lock body{overflow:hidden}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+h1,h2,p{margin:0}
+.muted{color:var(--muted)}
+.shell{max-width:480px;margin:0 auto;padding-block:12px 120px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ic{flex:none}
+
+/* header + hero */
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 0 10px}
+.brand{display:flex;align-items:center;gap:8px;font:700 24px var(--f-display);letter-spacing:-.03em}
+.brand svg{width:30px;height:30px}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:0;background:var(--surface);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow)}
+.hello{font:600 15px var(--f-body);color:var(--muted);margin-bottom:12px}
+.hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hero-ink);border-radius:var(--r-l);padding:20px 20px 54px}
+.hero .arcs{position:absolute;right:-70px;top:-70px;width:260px;height:260px;opacity:.14;pointer-events:none;color:var(--hero-ink)}
+.hero-row{display:flex;align-items:center;justify-content:space-between}
+.lbl{font-size:13px;color:var(--hero-mute);letter-spacing:.02em}
+.eye{background:none;border:0;color:var(--hero-ink);width:36px;height:36px;display:grid;place-items:center;cursor:pointer;border-radius:50%}
+.bal{position:relative;font:700 40px/1.1 var(--f-display);letter-spacing:-.03em;margin:4px 0 16px;font-variant-numeric:tabular-nums}
+.hero-foot{position:relative;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--hero-mute)}
+.pill{background:var(--accent);color:var(--accent-ink);font:700 11px var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:99px}
+.quick{position:relative;margin:-34px 12px 0;background:var(--surface);border-radius:var(--r-m);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:12px 4px}
+.qa{display:flex;flex-direction:column;align-items:center;gap:7px;background:none;border:0;font:600 12px var(--f-body);padding:4px 2px;cursor:pointer}
+.qa i,.svc i{width:46px;height:46px;border-radius:15px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-style:normal}
+
+h2{font:700 18px var(--f-display);letter-spacing:-.01em;margin:28px 0 12px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between}
+.link{background:none;border:0;color:var(--brand);font:600 13px var(--f-body);cursor:pointer;padding:4px 0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 6px}
+.svc{display:flex;flex-direction:column;align-items:center;gap:7px;background:none;border:0;font:500 12px/1.25 var(--f-body);text-align:center;cursor:pointer}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.promo{flex:0 0 76%;scroll-snap-align:start;background:var(--brand-soft);border-radius:var(--r-m);padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.promo b{font:700 16px/1.25 var(--f-display)}
+.promo small{color:var(--muted);font-size:13px}
+.code{align-self:flex-start;border:1.5px dashed var(--brand);color:var(--brand);background:none;border-radius:8px;padding:4px 10px;font:700 12px var(--f-body);letter-spacing:.08em;cursor:pointer}
+.card{background:var(--surface);border-radius:var(--r-m);box-shadow:var(--shadow);padding:4px 14px}
+.txlist{list-style:none;margin:0;padding:0}
+.tx{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 0;text-align:left;cursor:pointer}
+.txlist li:last-child .tx{border-bottom:0}
+.tx .t{min-width:0}
+.tx b{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tx small{color:var(--muted);font-size:12.5px}
+.tx .a{font:700 15px var(--f-body);font-variant-numeric:tabular-nums}
+.tx .a.in{color:var(--good)}
+.tdot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand)}
+.tdot.in{color:var(--good)}
+.foot{margin-top:22px;text-align:center;color:var(--muted);font-size:12.5px}
+.day{font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:20px 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;border-radius:99px;font:600 14px var(--f-body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.sumrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.sumrow div{background:var(--surface);border-radius:var(--r-m);padding:12px 14px;box-shadow:var(--shadow)}
+.sumrow small{display:block;color:var(--muted);font-size:12.5px}
+.sumrow b{font:700 18px var(--f-display);font-variant-numeric:tabular-nums}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--surface);border-top:1px solid var(--line);padding:4px max(8px,env(safe-area-inset-right,0px)) calc(4px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+.nav-in{max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);align-items:end}
+.nb{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;color:var(--muted);font:600 11px var(--f-body);padding:8px 0;cursor:pointer}
+.nb[aria-current="page"]{color:var(--brand)}
+.fab{width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin-top:-28px;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+
+/* flows */
+.flow{position:fixed;inset:0;z-index:30;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding-top:env(safe-area-inset-top,0px)}
+.flow-in{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.fh{display:flex;align-items:center;gap:12px;padding:10px 0;min-height:62px}
+.fh h1{font:700 20px var(--f-display);letter-spacing:-.02em}
+.fbody{flex:1;display:flex;flex-direction:column;gap:16px;padding-bottom:16px}
+.fbar{position:sticky;bottom:0;padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(to bottom,transparent,var(--bg) 30%);display:flex;flex-direction:column;gap:8px}
+.btn{width:100%;border:0;border-radius:14px;background:var(--brand);color:var(--brand-ink);font:700 16px var(--f-body);padding:15px 18px;cursor:pointer}
+.btn.ghost{background:var(--brand-soft);color:var(--brand)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.search{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:0 14px;color:var(--muted)}
+.search input,.field input{width:100%;min-width:0;font:500 16px var(--f-body);color:var(--ink);background:none;border:0;outline:none;padding:14px 0}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>span{font:600 13px var(--f-body);color:var(--muted)}
+.field input{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:14px}
+.field input:focus,.search:focus-within{border-color:var(--brand)}
+.crow{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 0;text-align:left;cursor:pointer}
+.crow b{display:block;font-weight:600}
+.crow small{color:var(--muted)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 15px var(--f-display);background:hsl(var(--h) 45% var(--av-l));color:var(--ink)}
+.pad{padding:16px 0}
+.who{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center}
+.who b{display:block}
+.amtbox{display:flex;align-items:baseline;gap:8px;border-bottom:2px solid var(--line);padding:4px 0}
+.amtbox:focus-within{border-color:var(--brand)}
+.amtbox span{font:700 26px var(--f-display);color:var(--muted)}
+.amtbox input{border:0;background:none;outline:none;font:700 40px var(--f-display);letter-spacing:-.02em;color:var(--ink);width:100%;min-width:0;font-variant-numeric:tabular-nums;padding:4px 0}
+.hint{min-height:20px;font-size:13.5px;color:var(--bad);font-weight:600}
+.rows{margin:0;display:flex;flex-direction:column}
+.rows div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.rows div:last-child{border-bottom:0}
+.rows dt{color:var(--muted)}
+.rows dd{margin:0;font-weight:600;text-align:right;min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:14px;text-align:left;font:700 16px var(--f-body);cursor:pointer;font-variant-numeric:tabular-nums}
+.opt[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.bank{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:14px;text-align:left;font:600 15px var(--f-body);cursor:pointer}
+.bank[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.banks{display:flex;flex-direction:column;gap:8px}
+.label{font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.va{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--brand-soft);border-radius:var(--r-m);padding:16px}
+.va b{font:700 22px var(--f-display);letter-spacing:.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.va button{flex:none;border:0;background:var(--brand);color:var(--brand-ink);border-radius:10px;padding:9px 12px;font:700 13px var(--f-body);cursor:pointer}
+.steps{margin:0;padding-left:20px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.okc{width:80px;height:80px;border-radius:50%;background:var(--good);color:var(--surface);display:grid;place-items:center;margin:18px auto 4px;animation:pop .45s ease-out both}
+.center{text-align:center}
+.center h1{font:700 22px var(--f-display);margin:8px 0 2px}
+.bigamt{font:700 34px var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.ticket{background:var(--surface);border-radius:var(--r-m);box-shadow:var(--shadow);padding:6px 16px}
+.token{font:700 20px var(--f-display);letter-spacing:.04em;text-align:center;background:var(--brand-soft);color:var(--brand);border-radius:12px;padding:14px;font-variant-numeric:tabular-nums}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--brand-soft);border-radius:99px;padding:4px}
+.seg button{border:0;background:none;border-radius:99px;padding:10px;font:700 14px var(--f-body);color:var(--brand);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.finder{position:relative;width:min(240px,70%);aspect-ratio:1;margin:4px auto;background:var(--scan-bg);border-radius:24px;overflow:hidden}
+.finder::before,.finder::after{content:"";position:absolute;inset:22px;border:3px solid var(--accent);border-radius:14px;-webkit-mask:linear-gradient(#000 0 0) top left/34px 34px no-repeat,linear-gradient(#000 0 0) top right/34px 34px no-repeat,linear-gradient(#000 0 0) bottom left/34px 34px no-repeat,linear-gradient(#000 0 0) bottom right/34px 34px no-repeat;mask:linear-gradient(#000 0 0) top left/34px 34px no-repeat,linear-gradient(#000 0 0) top right/34px 34px no-repeat,linear-gradient(#000 0 0) bottom left/34px 34px no-repeat,linear-gradient(#000 0 0) bottom right/34px 34px no-repeat}
+.finder i{position:absolute;left:30px;right:30px;height:2px;background:var(--accent);box-shadow:0 0 14px var(--accent);animation:sweep 2.4s ease-in-out infinite alternate}
+.qrbox{background:var(--qr-bg);padding:12px;border-radius:20px;width:min(260px,100%);aspect-ratio:1;margin:6px auto}
+.qrbox svg{display:block;width:100%;height:100%}
+.merch{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 0;text-align:left;cursor:pointer}
+.merch b{display:block;font-weight:600}
+.merch small{color:var(--muted)}
+.merch .tdot{border-radius:14px}
+.row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row small{display:block;color:var(--muted);font-size:12.5px}
+.row button.plain{background:none;border:0;text-align:left;cursor:pointer;padding:0;font:inherit;display:block}
+.sw{width:50px;height:30px;border-radius:99px;border:0;background:var(--line);position:relative;cursor:pointer;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw[aria-checked="true"]{background:var(--brand)}
+.sw[aria-checked="true"]::after{transform:translateX(20px)}
+.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:10px 0 6px}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.prof{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;padding:12px 0}
+.prof .av{width:56px;height:56px;font-size:20px}
+
+/* pin + toast */
+.pinov{position:fixed;inset:0;z-index:40;background:rgba(8,20,18,.62);display:flex;align-items:flex-end;justify-content:center}
+.pinsheet{width:100%;max-width:480px;background:var(--surface);border-radius:24px 24px 0 0;padding:18px max(20px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.pinhead{display:flex;align-items:center;justify-content:space-between;font:700 17px var(--f-display);margin-bottom:12px}
+.pinhead .icon-btn{box-shadow:none;background:var(--bg)}
+.dots{display:flex;justify-content:center;gap:14px;padding:10px 0}
+.dots i{width:14px;height:14px;border-radius:50%;border:2px solid var(--brand)}
+.dots i.on{background:var(--brand)}
+.dots.shake{animation:shake .35s}
+.pinmsg{text-align:center;font-size:13.5px;color:var(--muted);min-height:20px;margin-bottom:8px}
+.pinmsg.err{color:var(--bad);font-weight:600}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.keys button{height:62px;border-radius:16px;border:0;background:var(--bg);font:600 26px var(--f-display);cursor:pointer;display:grid;place-items:center}
+.keys button:disabled{opacity:.3}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);z-index:50;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font:600 14px var(--f-body);max-width:min(90vw,420px);text-align:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.finder video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.finder::before,.finder::after,.finder i{z-index:2}
+
+/* polish */
+.hero{background:linear-gradient(160deg,color-mix(in srgb,var(--hero) 80%,#fff) 0%,var(--hero) 58%,color-mix(in srgb,var(--hero) 82%,#000) 100%);box-shadow:0 16px 32px -14px rgba(11,93,90,.6)}
+.bal{font-size:44px}
+.quick{border-radius:22px;box-shadow:0 12px 30px -12px rgba(10,40,36,.32)}
+.qa i,.svc i{border-radius:17px;background:linear-gradient(160deg,var(--brand-soft),color-mix(in srgb,var(--brand-soft) 70%,var(--brand)));transition:transform .12s}
+.qa:active i,.svc:active i{transform:scale(.92)}
+.card,.ticket,.sumrow div{border-radius:20px}
+.promo{background:linear-gradient(135deg,var(--brand-soft),color-mix(in srgb,var(--brand-soft) 65%,var(--accent)));border-radius:20px}
+.tx{border-radius:12px;transition:background .12s}
+.tx:active,.crow:active,.merch:active{background:var(--brand-soft)}
+.nav{background:color-mix(in srgb,var(--surface) 86%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.nb[aria-current="page"]{font-weight:800}
+.fab{background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 80%,#fff),var(--accent));box-shadow:0 10px 22px -6px rgba(244,180,42,.7)}
+.btn:not(.ghost){box-shadow:0 10px 20px -10px var(--brand);transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn{border-radius:16px}
+.pinsheet{box-shadow:0 -16px 40px rgba(0,0,0,.25)}
+.pinsheet::before{content:"";display:block;width:40px;height:4px;border-radius:9px;background:var(--line);margin:-6px auto 12px}
+.dots i{width:16px;height:16px;transition:background .12s,transform .12s}
+.dots i.on{transform:scale(1.15)}
+.keys button{border-radius:18px;transition:background .1s,transform .1s}
+.keys button:active:not(:disabled){background:var(--brand-soft);transform:scale(.95)}
+.toast{box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+
+/* liquid glass */
+:root{--g-bg:rgba(255,255,255,.50);--g-line:rgba(255,255,255,.72);--g-hi:rgba(255,255,255,.95);--g-fx:blur(22px) saturate(180%);--g-sh:0 14px 34px -14px rgba(10,40,36,.38)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-bg:rgba(24,44,42,.48);--g-line:rgba(255,255,255,.14);--g-hi:rgba(255,255,255,.2);--g-sh:0 14px 34px -14px rgba(0,0,0,.6)}:root:not([data-theme="light"]) body::before{opacity:.5}}
+:root[data-theme="dark"]{--g-bg:rgba(24,44,42,.48);--g-line:rgba(255,255,255,.14);--g-hi:rgba(255,255,255,.2);--g-sh:0 14px 34px -14px rgba(0,0,0,.6)}
+:root[data-theme="dark"] body::before{opacity:.5}
+body{background:transparent}
+html{background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60vmax 60vmax at 8% -6%,rgba(56,194,179,.6),transparent 62%),radial-gradient(52vmax 52vmax at 104% 22%,rgba(244,180,42,.42),transparent 62%),radial-gradient(64vmax 64vmax at -6% 92%,rgba(90,140,255,.38),transparent 62%),radial-gradient(40vmax 40vmax at 90% 100%,rgba(236,110,170,.28),transparent 62%)}
+.quick,.card,.ticket,.sumrow div,.promo,.nav,.icon-btn,.search,.pinsheet,.toast,.va,.seg,.token{background:var(--g-bg);-webkit-backdrop-filter:var(--g-fx);backdrop-filter:var(--g-fx);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),inset 0 -1px 0 rgba(255,255,255,.12),var(--g-sh)}
+.toast{color:var(--ink)}
+.hero{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 18px 36px -14px rgba(11,93,90,.65);border:1px solid rgba(255,255,255,.22)}
+.hero::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(118deg,rgba(255,255,255,.3),rgba(255,255,255,0) 38%);pointer-events:none}
+.field input,.opt,.bank,.chip,.keys button{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi)}
+.chip[aria-pressed="true"],.opt[aria-pressed="true"],.bank[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:transparent}
+.opt[aria-pressed="true"],.bank[aria-pressed="true"]{background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
+.qa i,.svc i,.tdot{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),0 6px 14px -8px rgba(10,40,36,.4);color:var(--brand)}
+.nav{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));max-width:456px;margin:0 auto;border-radius:32px;padding:3px 6px}
+.toast{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+.pinsheet{border-radius:30px 30px 0 0;-webkit-backdrop-filter:blur(34px) saturate(190%);backdrop-filter:blur(34px) saturate(190%)}
+.pinov{background:rgba(8,20,18,.35)}
+.flow{background:color-mix(in srgb,var(--bg) 55%,transparent);-webkit-backdrop-filter:blur(28px) saturate(160%);backdrop-filter:blur(28px) saturate(160%)}
+.fbar{background:none}
+.btn:not(.ghost){background:linear-gradient(160deg,color-mix(in srgb,var(--brand) 82%,#fff),var(--brand));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 20px -10px var(--brand)}
+.btn.ghost{background:var(--g-bg);border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--g-bg:var(--surface)}}
+
+/* kaca geser */
+.nav{touch-action:none;-webkit-user-select:none;user-select:none}
+.nav-in{position:relative;z-index:1}
+.lens{position:absolute;left:0;top:4px;bottom:4px;width:0;border-radius:28px;z-index:0;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.7),rgba(255,255,255,.22));border:1px solid var(--g-line);box-shadow:inset 0 1px 0 var(--g-hi),inset 0 -8px 14px rgba(255,255,255,.14),0 8px 18px -8px rgba(10,40,36,.45);will-change:transform,width}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lens{background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06))}}
+:root[data-theme="dark"] .lens{background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06))}
+.nav.ready .lens{transition:transform .42s cubic-bezier(.34,1.45,.5,1),width .3s ease}
+.nav.dragging .lens{transition:none;box-shadow:inset 0 1px 0 var(--g-hi),0 16px 28px -10px rgba(10,40,36,.6),0 0 0 2px rgba(255,255,255,.3)}
+.nav.dragging .nb[aria-current="page"]{color:var(--muted)}
+.nav.dragging .nb.peek{color:var(--brand)}
+
+/* lebih kaca */
+:root{--g-bg:rgba(255,255,255,.24);--g-line:rgba(255,255,255,.88);--g-hi:#fff;--g-glow:rgba(255,255,255,.2);--g-fx:blur(30px) saturate(210%) brightness(1.06);--g-sh:0 18px 40px -16px rgba(10,40,36,.42)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-bg:rgba(34,62,60,.30);--g-line:rgba(255,255,255,.24);--g-hi:rgba(255,255,255,.36);--g-glow:rgba(255,255,255,.05);--g-fx:blur(30px) saturate(190%) brightness(1.1)}}
+:root[data-theme="dark"]{--g-bg:rgba(34,62,60,.30);--g-line:rgba(255,255,255,.24);--g-hi:rgba(255,255,255,.36);--g-glow:rgba(255,255,255,.05);--g-fx:blur(30px) saturate(190%) brightness(1.1)}
+body::before{background:radial-gradient(58vmax 58vmax at 6% -4%,rgba(40,210,190,.78),transparent 62%),radial-gradient(50vmax 50vmax at 106% 18%,rgba(255,176,40,.6),transparent 62%),radial-gradient(60vmax 60vmax at -8% 62%,rgba(90,130,255,.55),transparent 62%),radial-gradient(52vmax 52vmax at 100% 92%,rgba(255,90,160,.45),transparent 62%),radial-gradient(34vmax 34vmax at 55% 40%,rgba(160,110,255,.3),transparent 62%)}
+.quick,.card,.ticket,.sumrow div,.promo,.nav,.icon-btn,.search,.pinsheet,.toast,.va,.seg,.token{position:relative;box-shadow:inset 0 1px 0 var(--g-hi),inset 1px 0 0 rgba(255,255,255,.3),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.28),inset 0 0 30px var(--g-glow),var(--g-sh)}
+.nav,.toast{position:fixed}
+.quick::before,.card::before,.ticket::before,.sumrow div::before,.promo::before,.va::before,.search::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 38%,rgba(255,255,255,0) 68%,rgba(255,255,255,.16) 100%)}
+.hero{background:linear-gradient(160deg,rgba(45,175,165,.7),rgba(11,93,90,.8));-webkit-backdrop-filter:var(--g-fx);backdrop-filter:var(--g-fx);border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 36px rgba(255,255,255,.12),0 20px 40px -16px rgba(11,93,90,.7)}
+.qa i,.svc i,.tdot{background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,.12));-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 #fff,inset 0 -3px 6px rgba(255,255,255,.2),0 8px 16px -8px rgba(10,40,36,.45)}
+.field input,.opt,.bank,.chip,.keys button{background:rgba(255,255,255,.38);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .field input,:root:not([data-theme="light"]) .opt,:root:not([data-theme="light"]) .bank,:root:not([data-theme="light"]) .chip,:root:not([data-theme="light"]) .keys button,:root:not([data-theme="light"]) .qa i,:root:not([data-theme="light"]) .svc i,:root:not([data-theme="light"]) .tdot{background:rgba(255,255,255,.1)}}
+:root[data-theme="dark"] .field input,:root[data-theme="dark"] .opt,:root[data-theme="dark"] .bank,:root[data-theme="dark"] .chip,:root[data-theme="dark"] .keys button,:root[data-theme="dark"] .qa i,:root[data-theme="dark"] .svc i,:root[data-theme="dark"] .tdot{background:rgba(255,255,255,.1)}
+.lens{background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 55%,rgba(255,255,255,.28));box-shadow:inset 0 1px 0 #fff,inset 1px 0 0 rgba(255,110,160,.4),inset -1px 0 0 rgba(90,170,255,.4),inset 0 -8px 16px rgba(255,255,255,.2),0 8px 20px -8px rgba(10,40,36,.5)}
+.nav.dragging .lens{box-shadow:inset 0 1px 0 #fff,inset 1px 0 0 rgba(255,110,160,.5),inset -1px 0 0 rgba(90,170,255,.5),0 18px 30px -10px rgba(10,40,36,.6),0 0 0 2px rgba(255,255,255,.35)}
+.btn:not(.ghost){background:linear-gradient(160deg,rgba(60,190,175,.92),rgba(11,93,90,.9));-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4)}
+
+/* navbar ekstra kaca */
+:root{--g-gloss:.55}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-gloss:.2}}
+:root[data-theme="dark"]{--g-gloss:.2}
+.nav{border:0;border-radius:34px;padding:4px 8px;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.06) 55%,rgba(255,255,255,.16));-webkit-backdrop-filter:blur(38px) saturate(240%) brightness(1.12);backdrop-filter:blur(38px) saturate(240%) brightness(1.12);box-shadow:inset 0 2px 2px rgba(255,255,255,.7),inset 0 -2px 2px rgba(255,255,255,.35),inset 0 0 44px rgba(255,255,255,.16),0 22px 44px -14px rgba(10,30,28,.45),0 4px 10px -4px rgba(10,30,28,.2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nav{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03) 55%,rgba(255,255,255,.07))}}
+:root[data-theme="dark"] .nav{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03) 55%,rgba(255,255,255,.07))}
+.nav::before{content:"";position:absolute;left:10px;right:10px;top:2px;height:46%;border-radius:30px 30px 60% 60%/30px 30px 24px 24px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,var(--g-gloss)),rgba(255,255,255,0))}
+.nav::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;z-index:2;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,255,255,.12) 35%,rgba(255,255,255,.08) 62%,rgba(255,255,255,.85));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.lens{background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.1) 58%,rgba(255,255,255,.34))}
+.nb{transition:color .15s}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes sweep{from{top:28px}to{top:calc(100% - 30px)}}
+@keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell"><main id="view"></main></div>
+<nav class="nav" aria-label="Menu utama"><i class="lens" id="lens"></i><div class="nav-in" id="nav"></div></nav>
+<div id="flow" class="flow" hidden></div>
+<div id="pin" class="pinov" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var KEY='dapo.demo.v1',PIN='123456',TOPUP=100000000,H=3600000,D=86400000;
+var $=function(s,r){return (r||document).querySelector(s)};
+var num=function(v){return parseInt(String(v).replace(/\D/g,''),10)||0};
+var rp=function(v){return 'Rp'+Math.abs(v).toLocaleString('id-ID')};
+var fmtAmt=function(v){return v?v.toLocaleString('id-ID'):''};
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var fmtPhone=function(p){return String(p).replace(/(\d{4})(\d{4})(\d+)/,'$1-$2-$3')};
+var group4=function(s){return String(s).replace(/(.{4})/g,'$1 ').trim()};
+
+var P={
+plus:'M12 5v14M5 12h14',send:'M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z',down:'M12 5v14m0 0l-5-5m5 5l5-5',
+scan:'M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3M4 12h16',
+phone:'M8 3h8a1 1 0 011 1v16a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1zM11 18h2',
+bolt:'M13 2L4 14h7l-1 8 9-12h-7l1-8z',shield:'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',
+heart:'M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z',
+wifi:'M2 9a15 15 0 0120 0M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0M12 19.5h.01',
+drop:'M12 3s6 6.5 6 11a6 6 0 11-12 0c0-4.5 6-11 6-11z',card:'M3 6h18v12H3zM3 10h18',
+grid:'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z',
+home:'M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z',clock:'M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v5l3 2',
+user:'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0',
+eye:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 100-6 3 3 0 000 6z',
+eyeoff:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 100-6 3 3 0 000 6zM3 3l18 18',
+back:'M15 5l-7 7 7 7',check:'M5 12l5 5 9-10',bell:'M6 9a6 6 0 1112 0c0 6 2 7 2 7H4s2-1 2-7zM10 20a2 2 0 004 0',
+out:'M7 17L17 7M9 7h8v8',inn:'M17 7L7 17M15 17H7V9',copy:'M9 9h10v10H9zM5 15V5h10',
+store:'M4 9l1-5h14l1 5M4 9a2.5 2.5 0 005 0 2.5 2.5 0 006 0 2.5 2.5 0 005 0M5 11v9h14v-9',
+search:'M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.5-4.5',x:'M6 6l12 12M18 6L6 18',
+backspace:'M21 5H9l-6 7 6 7h12V5zM12 9l5 6M17 9l-5 6',
+gift:'M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7S9 3 7.5 4.5 9 7 12 7zM12 7s3-4 4.5-2.5S15 7 12 7z',
+help:'M12 3a9 9 0 100 18 9 9 0 000-18zM9.5 9.5a2.5 2.5 0 115 0c0 1.5-2.5 2-2.5 3.5M12 17h.01',
+lock:'M6 11h12v9H6zM8 11V8a4 4 0 018 0v3',chev:'M9 5l7 7-7 7',
+finger:'M7 18c0-3 1-5 1-7a4 4 0 018 0c0 2-1 5-1 7M4 14c0-6 3-10 8-10s8 4 8 10M10 21c0-2 1-4 1-6a1 1 0 012 0c0 3-1 5-1 6'
+};
+function ic(n,s){s=s||22;return '<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+P[n]+'"/></svg>'}
+function logo(){return '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="var(--accent)"/><path d="M11 9h5a7 7 0 010 14h-5z" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.9" fill="var(--accent-ink)"/></svg>'}
+
+var CONTACTS=[
+ {n:'Rina Maharani',p:'081234560011'},{n:'Bayu Pratama',p:'081298760022'},{n:'Sekar Ayu',p:'085712340033'},
+ {n:'Dimas Wiratama',p:'081355500044'},{n:'Putri Handayani',p:'087811220055'},{n:'Ibu',p:'081200990066'}];
+var BANKS=[{id:'nusa',n:'Bank Nusa',pre:'88010'},{id:'lestari',n:'Bank Lestari',pre:'70012'},{id:'rimba',n:'Bank Rimba',pre:'39881'}];
+var MY_PHONE='081234567890';
+var BILLS={
+ pulsa:{t:'Pulsa & Data',i:'phone',f:'Nomor HP',ph:'0812xxxxxxxx',mode:'nominal',opts:[10000,20000,50000,100000],prod:'Pulsa prabayar',min:9,adm:0},
+ listrik:{t:'Listrik PLN',i:'bolt',f:'ID pelanggan / nomor meter',ph:'11 sampai 12 digit',mode:'nominal',opts:[20000,50000,100000,200000],prod:'Token listrik PLN',min:11,adm:2500},
+ etoll:{t:'E-Money',i:'card',f:'Nomor kartu',ph:'16 digit',mode:'nominal',opts:[50000,100000,200000,500000],prod:'Isi saldo kartu',min:16,adm:0},
+ bpjs:{t:'BPJS Kesehatan',i:'shield',f:'Nomor VA keluarga',ph:'16 digit',mode:'inquiry',prod:'Iuran BPJS Kesehatan',min:16,adm:2500,base:35000,step:3500},
+ internet:{t:'Internet & TV',i:'wifi',f:'ID pelanggan',ph:'10 digit',mode:'inquiry',prod:'Tagihan internet & TV',min:10,adm:2500,base:275000,step:12500},
+ air:{t:'Air PDAM',i:'drop',f:'Nomor pelanggan',ph:'8 digit',mode:'inquiry',prod:'Tagihan air PDAM',min:8,adm:2500,base:62000,step:4000}};
+var CUST=['Budi Santoso','Siti Aminah','Agus Wibowo','Dewi Lestari','Hendra Kusuma','Maya Anggraini'];
+var MERCH=[
+ {n:'Warung Sedap Rasa',loc:'Jl. Melati 12',fixed:0},{n:'Kopi Sudut Lima',loc:'Jl. Kenanga 5',fixed:0},
+ {n:'Parkir Taman Kota',loc:'Zona B · tarif tetap',fixed:5000},{n:'Toko Bu Ratna',loc:'Pasar Baru Blok C',fixed:0}];
+var PROMO=[
+ {t:'Cashback 2% bayar QR',d:'Min. transaksi Rp20.000 di merchant Dapo.',code:'QRHEMAT',u:'30 Nov'},
+ {t:'Bebas biaya admin tagihan',d:'Bayar listrik, BPJS, dan air tanpa admin.',code:'TAGIHANOL',u:'15 Des'},
+ {t:'Bonus Rp10.000 top up pertama',d:'Top up min. Rp100.000 lewat transfer bank.',code:'DAPOBARU',u:'31 Des'}];
+var SV=[['pulsa','phone','Pulsa & Data'],['listrik','bolt','Listrik PLN'],['bpjs','shield','BPJS'],['internet','wifi','Internet & TV'],['air','drop','Air PDAM'],['etoll','card','E-Money'],['donasi','heart','Donasi'],['more','grid','Lainnya']];
+
+function seed(){var n=Date.now();return {bal:2450000,hide:false,bio:true,tx:[
+ {id:'DP4Q7M2K9A',type:'out',title:'Warung Sedap Rasa',sub:'Bayar QR',amt:-38500,ts:n-2*H},
+ {id:'DP8W1N5T3C',type:'in',title:'Dari Rina Maharani',sub:'Terima uang · Patungan makan',amt:150000,ts:n-5*H},
+ {id:'DP2B6R9X0E',type:'out',title:'Token listrik PLN',sub:'ID 5512 3408 771',amt:-102500,ts:n-D-3*H},
+ {id:'DP9F3L7V1H',type:'in',title:'Top up Bank Nusa',sub:'Virtual account',amt:500000,ts:n-2*D},
+ {id:'DP5J0P4Z8D',type:'out',title:'Ke Bayu Pratama',sub:'Kirim uang · Servis motor',amt:-250000,ts:n-3*D-H},
+ {id:'DP1S8Y6G2K',type:'out',title:'Pulsa prabayar',sub:'0812-9876-0022',amt:-50000,ts:n-5*D}]}}
+var S=null;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!Array.isArray(S.tx))S=seed();
+var tab='home',filter='all',F=null,pinCb=null,pinBuf='',toastT=0;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},2200)}
+function hue(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return h}
+function avatar(n){var w=String(n).split(/\s+/).filter(function(x){return /^[A-Za-z]/.test(x)});var i=w.slice(0,2).map(function(x){return x[0].toUpperCase()}).join('')||'+';return '<span class="av" style="--h:'+hue(n)+'">'+i+'</span>'}
+function addTx(t){var tx=Object.assign({id:'DP'+Math.random().toString(36).slice(2,6).toUpperCase()+Date.now().toString(36).slice(-6).toUpperCase(),ts:Date.now()},t);S.tx.unshift(tx);S.bal+=t.amt;save();return tx}
+function dayLabel(ts){var d=new Date(ts),n=new Date();var a=new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime(),b=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
+ if(a===b)return 'Hari ini';if(b-a===D)return 'Kemarin';return d.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'})}
+function hm(ts){return new Date(ts).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})}
+function longDate(ts){return new Date(ts).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})+', '+hm(ts)}
+function greet(){var h=new Date().getHours();return h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam'}
+
+/* ---------- main views ---------- */
+function txRow(t){var inc=t.amt>0;return '<li><button class="tx" data-act="tx" data-id="'+t.id+'"><span class="tdot'+(inc?' in':'')+'">'+ic(inc?'inn':'out',20)+'</span><span class="t"><b>'+esc(t.title)+'</b><small>'+esc(t.sub)+' · '+hm(t.ts)+'</small></span><span class="a'+(inc?' in':'')+'">'+(inc?'+':'−')+rp(t.amt)+'</span></button></li>'}
+
+function homeView(){
+ var qa=[['topup','plus','Top Up'],['send','send','Kirim'],['request','down','Minta'],['scan','scan','Scan QR']];
+ return '<header class="top"><div class="brand">'+logo()+'<span>dapo</span></div><button class="icon-btn" data-act="toast" data-msg="Belum ada notifikasi baru" aria-label="Notifikasi">'+ic('bell')+'</button></header>'+
+ '<p class="hello">'+greet()+'. Mau bayar apa hari ini?</p>'+
+ '<section class="hero" aria-label="Saldo"><svg class="arcs" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="105"/></svg>'+
+ '<div class="hero-row"><span class="lbl">Saldo Dapo</span><button class="eye" data-act="eye" aria-label="'+(S.hide?'Tampilkan':'Sembunyikan')+' saldo">'+ic(S.hide?'eyeoff':'eye',20)+'</button></div>'+
+ '<div class="bal">'+(S.hide?'Rp ••••••':rp(S.bal))+'</div>'+
+ '<div class="hero-foot"><span class="pill">Dapo Plus</span><span>Limit saldo Rp200.000.000</span></div></section>'+
+ '<div class="quick">'+qa.map(function(q){return '<button class="qa" data-act="flow" data-flow="'+q[0]+'"><i>'+ic(q[1],22)+'</i><span>'+q[2]+'</span></button>'}).join('')+'</div>'+
+ '<h2>Layanan</h2><div class="grid">'+SV.map(function(s){return '<button class="svc" data-act="svc" data-k="'+s[0]+'"><i>'+ic(s[1],22)+'</i><span>'+s[2]+'</span></button>'}).join('')+'</div>'+
+ '<h2>Promo untukmu</h2><div class="strip">'+PROMO.map(promoCard).join('')+'</div>'+
+ '<div class="sec-head"><h2>Terakhir</h2><button class="link" data-act="tab" data-tab="history">Lihat semua</button></div>'+
+ '<div class="card"><ul class="txlist">'+S.tx.slice(0,4).map(txRow).join('')+'</ul></div>'+
+ '<p class="foot">Prototipe Dapo. Saldo dan transaksi hanya contoh, tidak ada uang sungguhan.</p>'}
+function promoCard(p){return '<div class="promo"><b>'+p.t+'</b><small>'+p.d+' Sampai '+p.u+'.</small><button class="code" data-act="copy" data-v="'+p.code+'" aria-label="Salin kode '+p.code+'">'+p.code+'</button></div>'}
+
+function historyView(){
+ var list=S.tx.filter(function(t){return filter==='all'||(filter==='in'?t.amt>0:t.amt<0)});
+ var now=new Date(),inM=0,outM=0;
+ S.tx.forEach(function(t){var d=new Date(t.ts);if(d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear()){if(t.amt>0)inM+=t.amt;else outM+=-t.amt}});
+ var html='<header class="top"><h2 style="margin:0">Riwayat</h2></header>'+
+ '<div class="sumrow"><div><small>Masuk bulan ini</small><b>'+rp(inM)+'</b></div><div><small>Keluar bulan ini</small><b>'+rp(outM)+'</b></div></div>'+
+ '<div class="chips">'+[['all','Semua'],['in','Masuk'],['out','Keluar']].map(function(c){return '<button class="chip" data-act="filter" data-f="'+c[0]+'" aria-pressed="'+(filter===c[0])+'">'+c[1]+'</button>'}).join('')+'</div>';
+ if(!list.length)return html+'<p class="muted pad">Belum ada transaksi.</p>';
+ var last='';
+ list.forEach(function(t){var l=dayLabel(t.ts);if(l!==last){if(last)html+='</ul></div>';html+='<div class="day">'+l+'</div><div class="card"><ul class="txlist">';last=l}html+=txRow(t)});
+ return html+'</ul></div>'}
+
+function promoView(){return '<header class="top"><h2 style="margin:0">Promo</h2></header><div style="display:flex;flex-direction:column;gap:12px">'+PROMO.map(function(p){return promoCard(p).replace('flex:0 0 76%','')}).join('')+'</div><p class="foot">Ketuk kode untuk menyalin. Promo cashback QR aktif otomatis di prototipe ini.</p>'}
+
+function sw(id,on,label){return '<button class="sw" role="switch" aria-checked="'+on+'" aria-label="'+label+'" data-act="'+id+'"></button>'}
+function accountView(){
+ var pct=Math.min(100,Math.round(S.bal/200000000*100));
+ return '<header class="top"><h2 style="margin:0">Akun</h2></header>'+
+ '<div class="card"><div class="prof">'+avatar('Akun Demo')+'<div><b>Akun Demo</b><br><span class="muted">'+fmtPhone(MY_PHONE)+'</span></div></div></div>'+
+ '<div class="card" style="margin-top:12px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center"><b>Dapo Plus</b><span class="pill">Terverifikasi</span></div>'+
+ '<div class="meter" role="img" aria-label="Saldo terpakai '+pct+' persen dari limit"><i style="width:'+Math.max(pct,2)+'%"></i></div><small class="muted">'+rp(S.bal)+' dari limit Rp200.000.000</small></div>'+
+ '<div class="card" style="margin-top:12px">'+
+ '<div class="row"><div>Tampilkan saldo<small>Di halaman beranda</small></div>'+sw('sw-hide',!S.hide,'Tampilkan saldo')+'</div>'+
+ '<div class="row"><div>Sidik jari untuk PIN<small>Konfirmasi lebih cepat</small></div>'+sw('sw-bio',S.bio,'Sidik jari untuk PIN')+'</div>'+
+ '<div class="row"><button class="plain" data-act="chpin">Ganti PIN<small>'+(S.pin?'PIN sudah diganti':'Masih PIN bawaan demo')+'</small></button>'+ic('chev',18)+'</div>'+
+ '<div class="row"><button class="plain" data-act="toast" data-msg="Pusat bantuan belum tersedia di prototipe">Pusat bantuan</button>'+ic('help',18)+'</div>'+
+ '<div class="row"><button class="plain" data-act="admin">Mode admin<small>Khusus pemilik prototipe</small></button>'+ic('lock',18)+'</div></div>'+
+ '<button class="btn ghost" style="margin-top:16px" data-act="reset">Reset data demo</button>'}
+
+var NAV=[['home','home','Beranda'],['history','clock','Riwayat'],['scan','scan','Scan'],['promo','gift','Promo'],['account','user','Akun']];
+function renderNav(){$('#nav').innerHTML=NAV.map(function(n){
+ if(n[0]==='scan')return '<button class="nb" data-act="flow" data-flow="scan" aria-label="Scan QR"><span class="fab">'+ic('scan',26)+'</span></button>';
+ return '<button class="nb" data-act="tab" data-tab="'+n[0]+'"'+(tab===n[0]?' aria-current="page"':'')+'>'+ic(n[1],22)+'<span>'+n[2]+'</span></button>'}).join('');placeLens()}
+function render(){var v={home:homeView,history:historyView,promo:promoView,account:accountView}[tab]();$('#view').innerHTML=v;renderNav()}
+
+/* ---------- flows ---------- */
+function shell(title,body,bar,back){return '<div class="flow-in"><header class="fh">'+(back===false?'':'<button class="icon-btn" data-act="back" aria-label="Kembali">'+ic('back')+'</button>')+'<h1>'+title+'</h1></header><div class="fbody">'+body+'</div>'+(bar?'<div class="fbar">'+bar+'</div>':'')+'</div>'}
+function rows(l){return '<dl class="rows">'+l.filter(Boolean).map(function(r){return '<div><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>'}).join('')+'</dl>'}
+function openFlow(name,data){F={name:name,step:0,done:false,data:data||{}};$('#flow').hidden=false;document.documentElement.classList.add('lock');renderFlow()}
+function closeFlow(){stopCam();F=null;$('#flow').hidden=true;document.documentElement.classList.remove('lock');render()}
+function renderFlow(keep){var el=$('#flow'),st=el.scrollTop;if(!F)return;
+ var fn={send:fSend,topup:fTopup,bill:fBill,pay:fPay,scan:fScan,request:fRequest,detail:fDetail,admin:fAdmin}[F.name];
+ el.innerHTML=fn();el.scrollTop=keep?st:0;sync();if(F.name==='scan'&&F.data.tab!=='mine')startCam();else stopCam()}
+function valid(){var d=F.data,a=d.amount||0;
+ if(F.name==='send'&&F.step===1){if(a>S.bal)return {ok:false,msg:'Saldo tidak cukup. Top up dulu.'};if(a>0&&a<1000)return {ok:false,msg:'Minimal Rp1.000'};return {ok:a>=1000,msg:''}}
+ if(F.name==='topup'&&F.step===0){if(a>0&&a<10000)return {ok:false,msg:'Minimal top up Rp10.000'};if(a>TOPUP)return {ok:false,msg:'Maksimal top up Rp100.000.000'};return {ok:!!d.bank&&a>=10000,msg:''}}
+ if(F.name==='pay'&&F.step===0){if(d.m.fixed)return {ok:d.m.fixed<=S.bal,msg:d.m.fixed>S.bal?'Saldo tidak cukup. Top up dulu.':''};if(a>S.bal)return {ok:false,msg:'Saldo tidak cukup. Top up dulu.'};if(a>0&&a<500)return {ok:false,msg:'Minimal Rp500'};return {ok:a>=500,msg:''}}
+ if(F.name==='request'&&F.step===0){if(a>0&&a<1000)return {ok:false,msg:'Minimal Rp1.000'};return {ok:a>=1000,msg:''}}
+ if(F.name==='bill'&&F.step===0){var B=BILLS[d.kind],len=(d.cid||'').length;if(len>0&&len<B.min)return {ok:false,msg:'Nomor minimal '+B.min+' digit'};return {ok:len>=B.min&&(B.mode==='inquiry'||!!d.opt),msg:''}}
+ return {ok:true,msg:''}}
+function sync(){if(!F)return;var v=valid(),c=$('#cta'),h=$('#hint');if(c)c.disabled=!v.ok;if(h)h.textContent=v.msg||''}
+function amtBox(v){return '<div class="amtbox"><span>Rp</span><input id="amt" data-amt inputmode="numeric" autocomplete="off" placeholder="0" aria-label="Nominal" value="'+fmtAmt(v||0)+'"></div><p id="hint" class="hint" role="alert"></p>'}
+function quickChips(list){return '<div class="chips">'+list.map(function(v){return '<button class="chip" data-act="setamt" data-v="'+v+'">'+fmtAmt(v)+'</button>'}).join('')+'</div>'}
+
+function done(title,tx,extra,again){
+ return shell('',
+ '<div class="center"><div class="okc">'+ic('check',40)+'</div><h1>'+title+'</h1><div class="bigamt">'+rp(tx.amt)+'</div></div>'+
+ (extra||'')+
+ '<div class="ticket">'+rows([['Transaksi',esc(tx.title)],['Keterangan',esc(tx.sub)],['Waktu',longDate(tx.ts)],['ID transaksi',tx.id],['Status','Berhasil']])+'</div>',
+ '<button class="btn" data-act="close">Selesai</button>'+(again||''),false)}
+
+/* send */
+function contactList(q){q=(q||'').trim().toLowerCase();var dg=q.replace(/\D/g,'');var h='';
+ var row=function(n,p){return '<button class="crow" data-act="pick" data-n="'+esc(n)+'" data-p="'+p+'">'+avatar(n)+'<span><b>'+esc(n)+'</b><small>'+fmtPhone(p)+'</small></span></button>'};
+ if(dg.length>=9&&!CONTACTS.some(function(c){return c.p===dg}))h+=row(fmtPhone(dg),dg);
+ CONTACTS.filter(function(c){return !q||c.n.toLowerCase().indexOf(q)>-1||(dg&&c.p.indexOf(dg)>-1)}).forEach(function(c){h+=row(c.n,c.p)});
+ return h||'<p class="muted pad">Kontak tidak ditemukan. Ketik nomor HP lengkap.</p>'}
+function fSend(){var d=F.data;
+ if(F.step===0)return shell('Kirim uang','<label class="search">'+ic('search',20)+'<input id="to" placeholder="Nama atau nomor HP" autocomplete="off" aria-label="Cari penerima"></label>'+(navigator.contacts&&navigator.contacts.select?'<button class="btn ghost" data-act="pickc">Pilih dari kontak HP</button>':'')+'<div class="label">Kontak</div><div id="clist">'+contactList('')+'</div>');
+ if(F.step===1)return shell('Nominal','<div class="who">'+avatar(d.to.n)+'<span><b>'+esc(d.to.n)+'</b><span class="muted">'+fmtPhone(d.to.p)+'</span></span></div>'+amtBox(d.amount)+quickChips([10000,25000,50000,100000])+
+  '<label class="field"><span>Catatan (opsional)</span><input id="note" maxlength="60" placeholder="Contoh: patungan makan" value="'+esc(d.note||'')+'"></label><p class="muted">Saldo Dapo '+rp(S.bal)+' · Biaya kirim gratis</p>',
+  '<button id="cta" class="btn" data-act="next" disabled>Lanjut</button>');
+ if(F.step===2)return shell('Konfirmasi','<div class="ticket">'+rows([['Penerima',esc(d.to.n)],['Nomor',fmtPhone(d.to.p)],['Nominal',rp(d.amount)],['Biaya','Gratis'],d.note?['Catatan',esc(d.note)]:null,['Total',rp(d.amount)]])+'</div>',
+  '<button class="btn" data-act="go-send">Kirim '+rp(d.amount)+'</button>');
+ return done('Uang terkirim',d.tx,'',' ')}
+/* topup */
+function vaNo(b){return b.pre+MY_PHONE}
+function fTopup(){var d=F.data;
+ if(F.step===0)return shell('Top up saldo','<div class="label">Pilih bank</div><div class="banks">'+BANKS.map(function(b){return '<button class="bank" data-act="bank" data-id="'+b.id+'" aria-pressed="'+(d.bank&&d.bank.id===b.id)+'"><span>'+b.n+'</span><small class="muted">Gratis</small></button>'}).join('')+'</div><div class="label">Nominal</div>'+amtBox(d.amount)+quickChips([50000,100000,250000,500000,1000000]),
+  '<button id="cta" class="btn" data-act="next" disabled>Lanjut</button>');
+ if(F.step===1){var no=vaNo(d.bank);return shell('Bayar lewat '+d.bank.n,'<p class="muted">Transfer tepat sesuai nominal ke virtual account berikut. Berlaku 24 jam.</p><div class="label">Nomor virtual account</div><div class="va"><b>'+group4(no)+'</b><button data-act="copy" data-v="'+no+'">Salin</button></div>'+
+  '<div class="ticket">'+rows([['Bank',d.bank.n],['Nominal',rp(d.amount)],['Biaya admin','Gratis']])+'</div><ol class="steps"><li>Buka aplikasi bank atau ATM.</li><li>Pilih transfer ke virtual account.</li><li>Masukkan nomor di atas, lalu konfirmasi.</li></ol>',
+  '<button class="btn" data-act="go-topup">Simulasikan pembayaran</button><p class="muted center" style="font-size:12.5px">Prototipe: tombol ini menggantikan transfer bank sungguhan.</p>')}
+ return done('Top up berhasil',d.tx,'')}
+/* bills */
+function infoBill(kind,cid){var B=BILLS[kind],s=0;for(var i=0;i<cid.length;i++)s+=+cid[i];var nm=CUST[s%CUST.length].split(' ').map(function(w){return w[0]+'*'.repeat(w.length-1)}).join(' ');return {name:nm,amount:B.base+(s%7)*B.step}}
+function fBill(){var d=F.data,B=BILLS[d.kind];
+ if(F.step===0){var idf='<label class="field"><span>'+B.f+'</span><input id="cid" inputmode="numeric" autocomplete="off" placeholder="'+B.ph+'" value="'+esc(d.cid||'')+'"></label>';
+  if(B.mode==='nominal')return shell(B.t,idf+'<div class="label">Pilih nominal</div><div class="opts">'+B.opts.map(function(o){return '<button class="opt" data-act="opt" data-v="'+o+'" aria-pressed="'+(d.opt===o)+'">'+rp(o)+'</button>'}).join('')+'</div><p id="hint" class="hint" role="alert"></p>','<button id="cta" class="btn" data-act="next" disabled>Lanjut</button>');
+  return shell(B.t,idf+'<p id="hint" class="hint" role="alert"></p>','<button id="cta" class="btn" data-act="next" disabled>Cek tagihan</button>')}
+ if(F.step===1){var amt=B.mode==='nominal'?d.opt:d.inq.amount,tot=amt+B.adm;
+  return shell('Konfirmasi',(B.mode==='inquiry'?'<p class="muted">Tagihan ditemukan untuk nomor '+esc(d.cid)+'.</p>':'')+'<div class="ticket">'+rows([['Layanan',B.prod],['Nomor',esc(d.cid)],B.mode==='inquiry'?['Atas nama',d.inq.name]:null,B.mode==='inquiry'?['Periode','Nov 2026']:null,['Nominal',rp(amt)],['Biaya admin',B.adm?rp(B.adm):'Gratis'],['Total',rp(tot)]])+'</div>',
+  '<button class="btn" data-act="go-bill">Bayar '+rp(tot)+'</button>')}
+ var tok=d.token?'<div><div class="label" style="margin-bottom:6px">Token listrik</div><div class="token">'+d.token+'</div></div>':'';
+ return done('Pembayaran berhasil',d.tx,tok)}
+/* pay qr */
+function fPay(){var d=F.data,m=d.m;
+ if(F.step===0)return shell('Bayar QR','<div class="merch" style="border:0"><span class="tdot">'+ic('store',22)+'</span><span><b>'+esc(m.n)+'</b><small>'+esc(m.loc)+'</small></span><span></span></div>'+
+  (m.fixed?'<div class="center"><div class="label">Total tagihan</div><div class="bigamt">'+rp(m.fixed)+'</div></div><p id="hint" class="hint center" role="alert"></p>':'<div class="label">Masukkan nominal</div>'+amtBox(d.amount))+
+  '<p class="muted">Cashback 2% untuk pembayaran mulai Rp20.000. Saldo Dapo '+rp(S.bal)+'.</p>','<button id="cta" class="btn" data-act="go-pay" disabled>Bayar</button>');
+ var cb=d.cb?'<div class="ticket" style="background:var(--brand-soft)">'+rows([['Cashback 2%','+'+rp(d.cb)]])+'</div>':'';
+ return done('Pembayaran berhasil',d.tx,cb)}
+/* request */
+function fRequest(){var d=F.data;
+ if(F.step===0)return shell('Minta uang','<p class="muted">Buat tautan tagihan, lalu kirim ke siapa saja lewat chat.</p>'+amtBox(d.amount)+'<label class="field"><span>Untuk apa? (opsional)</span><input id="note" maxlength="60" placeholder="Contoh: iuran arisan" value="'+esc(d.note||'')+'"></label>','<button id="cta" class="btn" data-act="next" disabled>Buat tautan</button>');
+ var link='https://dapo.example/tagih/'+d.code;
+ return shell('Tautan siap','<div class="center"><div class="label">Nominal diminta</div><div class="bigamt">'+rp(d.amount)+'</div>'+(d.note?'<p class="muted">'+esc(d.note)+'</p>':'')+'</div><div class="va"><b style="font-size:15px">'+link+'</b><button data-act="copy" data-v="'+link+'">Salin</button></div><p class="muted center" style="font-size:12.5px">Alamat contoh untuk prototipe, belum bisa dibuka.</p>','<button class="btn" data-act="close">Selesai</button>')}
+/* scan */
+function qr(seed){var N=25,h=2166136261>>>0,i;for(i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)>>>0}
+ var rnd=function(){h^=h<<13;h>>>=0;h^=h>>>17;h^=h<<5;h>>>=0;return h/4294967296};
+ var inF=function(x,y){return (x<8&&y<8)||(x>=N-8&&y<8)||(x<8&&y>=N-8)};var r='',x,y;
+ for(y=0;y<N;y++)for(x=0;x<N;x++){if(inF(x,y))continue;if(rnd()>.52)r+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'}
+ var fin=function(a,b){return '<path d="M'+a+' '+b+'h7v7h-7z M'+(a+1)+' '+(b+1)+'v5h5v-5z" fill-rule="evenodd"/><rect x="'+(a+2)+'" y="'+(b+2)+'" width="3" height="3"/>'};
+ return '<svg viewBox="-1 -1 '+(N+2)+' '+(N+2)+'" fill="var(--qr-fg)" shape-rendering="crispEdges" role="img" aria-label="Contoh kode QR">'+r+fin(0,0)+fin(N-7,0)+fin(0,N-7)+'</svg>'}
+function fScan(){var t=F.data.tab||'scan';
+ var seg='<div class="seg"><button data-act="stab" data-t="scan" aria-pressed="'+(t==='scan')+'">Scan</button><button data-act="stab" data-t="mine" aria-pressed="'+(t==='mine')+'">QR Saya</button></div>';
+ if(t==='mine')return shell('QR Dapo',seg+'<div class="qrbox">'+qr('dapo-'+MY_PHONE)+'</div><div class="center"><b>Akun Demo</b><p class="muted">'+fmtPhone(MY_PHONE)+'</p></div><p class="muted center" style="font-size:12.5px">Tunjukkan kode ini untuk menerima uang. Kode contoh, belum bisa dipindai.</p>');
+ return shell('Scan QR',seg+'<div class="finder"><video id="cam" playsinline muted></video><i></i></div><p id="camst" class="muted center" role="status">Menyalakan kamera…</p><label class="btn ghost" style="text-align:center;display:block">Upload foto QRIS<input id="qrfile" type="file" accept="image/*" hidden></label><label class="field"><span>Atau tempel kode QRIS</span><input id="qrtxt" autocomplete="off" placeholder="000201…"></label><button class="btn ghost" data-act="qrtxt">Proses kode</button><div class="label">Coba merchant demo</div><div>'+MERCH.map(function(m,i){return '<button class="merch" data-act="merch" data-i="'+i+'"><span class="tdot">'+ic('store',20)+'</span><span><b>'+esc(m.n)+'</b><small>'+esc(m.loc)+'</small></span>'+ic('chev',18)+'</button>'}).join('')+'</div>')}
+function fDetail(){var t=F.data.tx,inc=t.amt>0;return shell('Detail transaksi','<div class="center"><span class="tdot'+(inc?' in':'')+'" style="margin:0 auto 8px;width:56px;height:56px">'+ic(inc?'inn':'out',26)+'</span><div class="bigamt">'+(inc?'+':'−')+rp(t.amt)+'</div><p class="muted">'+esc(t.title)+'</p></div><div class="ticket">'+rows([['Keterangan',esc(t.sub)],['Waktu',longDate(t.ts)],['ID transaksi',t.id],['Status','Berhasil']])+'</div>','<button class="btn ghost" data-act="close">Tutup</button>')}
+
+/* admin */
+function fAdmin(){var d=F.data;
+ if(F.step===0)return shell('Mode admin','<p class="muted">Khusus pemilik prototipe. Masuk untuk mengatur saldo contoh.</p><label class="field"><span>Nama admin</span><input id="adm-u" autocomplete="off" autocapitalize="none" placeholder="Nama admin"></label><label class="field"><span>Kode admin</span><input id="adm-p" type="password" inputmode="numeric" autocomplete="off" placeholder="Kode"></label><p id="hint" class="hint" role="alert"></p>','<button class="btn" data-act="adm-login">Masuk</button>');
+ return shell('Mode admin','<div class="ticket">'+rows([['Admin','nafis'],['Saldo contoh',rp(S.bal)],['Jumlah transaksi',String(S.tx.length)]])+'</div><div class="label">Nominal</div>'+amtBox(d.amount)+'<div class="opts"><button class="btn" data-act="adm-add">Tambah saldo</button><button class="btn ghost" data-act="adm-sub">Kurangi saldo</button></div><button class="btn ghost" data-act="adm-set">Set saldo ke nominal ini</button><button class="btn ghost" data-act="reset-adm">Reset data demo</button>','<button class="btn ghost" data-act="close">Keluar admin</button>')}
+
+/* ---------- PIN ---------- */
+function askPin(cb){pinCb=cb;pinBuf='';drawPin('');$('#pin').hidden=false}
+var pinMode=null,newPin='',PT={v:'Masukkan PIN Dapo',n:'Buat PIN baru',c:'Ulangi PIN baru'};
+function curPin(){return S.pin||PIN}
+function pinHint(){return pinMode==='n'?'Pilih 6 angka yang tidak mudah ditebak':pinMode==='c'?'Masukkan PIN baru sekali lagi':(S.pin?'':'PIN demo: 123456')}
+function changePin(){askPin(function(){pinMode='n';pinBuf='';newPin='';drawPin('');$('#pin').hidden=false})}
+function pinDone(){
+ if(pinMode==='n'){
+  if(/^(\d)\1{5}$/.test(pinBuf)||'0123456789012345'.indexOf(pinBuf)>-1||'9876543210987654'.indexOf(pinBuf)>-1){pinBuf='';drawPin('PIN terlalu mudah ditebak. Coba yang lain.',true);return}
+  newPin=pinBuf;pinBuf='';pinMode='c';drawPin('');return}
+ if(pinMode==='c'){
+  if(pinBuf!==newPin){pinBuf='';newPin='';pinMode='n';drawPin('PIN tidak sama. Buat ulang.',true);return}
+  S.pin=newPin;save();pinMode=null;newPin='';pinBuf='';pinCb=null;$('#pin').hidden=true;toast('PIN berhasil diganti');render();return}
+ if(pinBuf===curPin())pinOk();else{pinBuf='';drawPin('PIN salah. Coba lagi.',true)}}
+function drawPin(err,shake){$('#pin').innerHTML='<div class="pinsheet" role="dialog" aria-label="Masukkan PIN"><div class="pinhead"><span>'+PT[pinMode||'v']+'</span><button class="icon-btn" data-act="pinx" aria-label="Tutup">'+ic('x',20)+'</button></div><div class="dots'+(shake?' shake':'')+'" aria-hidden="true">'+[0,1,2,3,4,5].map(function(i){return '<i class="'+(i<pinBuf.length?'on':'')+'"></i>'}).join('')+'</div><p class="pinmsg'+(err?' err':'')+'" role="alert">'+(err||pinHint())+'</p><div class="keys">'+[1,2,3,4,5,6,7,8,9].map(function(k){return '<button data-act="k" data-k="'+k+'">'+k+'</button>'}).join('')+'<button data-act="fp" aria-label="Sidik jari"'+(S.bio&&!pinMode?'':' disabled')+'>'+ic('finger',26)+'</button><button data-act="k" data-k="0">0</button><button data-act="kb" aria-label="Hapus">'+ic('backspace',26)+'</button></div></div>'}
+function pinOk(){$('#pin').hidden=true;var cb=pinCb;pinCb=null;if(cb)cb()}
+
+/* ---------- scan QRIS ---------- */
+var cam={stream:null,raf:0,warn:0};
+function stopCam(){cancelAnimationFrame(cam.raf);if(cam.stream){cam.stream.getTracks().forEach(function(t){t.stop()});cam.stream=null}}
+function decodeQR(src,w,h,max){return new Promise(function(res){
+ var k=Math.min(1,max/Math.max(w,h)),cw=Math.round(w*k),ch=Math.round(h*k),c=document.createElement('canvas');c.width=cw;c.height=ch;
+ var x=c.getContext('2d',{willReadFrequently:true});x.drawImage(src,0,0,cw,ch);
+ var js=function(){try{var im=x.getImageData(0,0,cw,ch),r=window.jsQR&&jsQR(im.data,cw,ch);res(r?r.data:null)}catch(e){res(null)}};
+ if(window.BarcodeDetector){try{new BarcodeDetector({formats:['qr_code']}).detect(c).then(function(a){a.length?res(a[0].rawValue):js()},js);return}catch(e){}}
+ js()})}
+function parseQris(s){s=String(s).trim();if(s.indexOf('000201')!==0)return null;var o={},i=0;
+ while(i+4<=s.length){var tg=s.substr(i,2),ln=parseInt(s.substr(i+2,2),10);if(isNaN(ln))break;o[tg]=s.substr(i+4,ln);i+=4+ln}
+ if(!o['59'])return null;var a=parseFloat(o['54']||'0');return {n:o['59'],loc:o['60']||'',fixed:a>0?Math.round(a):0}}
+function gotQR(t){var q=parseQris(t);
+ if(!q){if(Date.now()-cam.warn>2500){cam.warn=Date.now();toast('QR ini bukan QRIS')}return}
+ stopCam();openFlow('pay',{m:{n:q.n,loc:(q.loc?q.loc+' · ':'')+'QRIS',fixed:q.fixed},amount:q.fixed})}
+function startCam(){stopCam();var v=$('#cam'),st=$('#camst');if(!v)return;
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){st.textContent='Kamera tidak didukung. Pakai upload foto QRIS.';return}
+ navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false}).then(function(s){
+  if(!F||F.name!=='scan'||F.data.tab==='mine'){s.getTracks().forEach(function(t){t.stop()});return}
+  cam.stream=s;v.srcObject=s;v.play();st.textContent='Arahkan kamera ke kode QRIS';var busy=false;
+  (function loop(){cam.raf=requestAnimationFrame(loop);if(busy||v.readyState<2||!v.videoWidth)return;busy=true;
+   decodeQR(v,v.videoWidth,v.videoHeight,640).then(function(r){busy=false;if(r&&cam.stream)gotQR(r)})})()
+ },function(){st.textContent='Izin kamera ditolak. Pakai upload foto QRIS di bawah.'})}
+
+/* ---------- actions ---------- */
+function startBill(k){if(!BILLS[k]){toast('Segera hadir di prototipe');return}openFlow('bill',{kind:k})}
+function copy(v){var ok=function(){toast('Disalin: '+v)},no=function(){toast('Salin manual: '+v)};try{navigator.clipboard.writeText(v).then(ok,no)}catch(e){no()}}
+function lowBal(need){if(need>S.bal){toast('Saldo tidak cukup. Top up dulu.');return true}return false}
+
+var A={
+ toast:function(t){toast(t.dataset.msg)},
+ eye:function(){S.hide=!S.hide;save();render()},
+ tab:function(t){tab=t.dataset.tab;render();window.scrollTo(0,0)},
+ flow:function(t){var f=t.dataset.flow;if(f==='send')openFlow('send');else if(f==='topup')openFlow('topup');else if(f==='request')openFlow('request',{code:Math.random().toString(36).slice(2,8).toUpperCase()});else if(f==='scan')openFlow('scan',{tab:'scan'})},
+ svc:function(t){startBill(t.dataset.k)},
+ tx:function(t){var x=S.tx.filter(function(y){return y.id===t.dataset.id})[0];if(x)openFlow('detail',{tx:x})},
+ filter:function(t){filter=t.dataset.f;render()},
+ copy:function(t){copy(t.dataset.v)},
+ reset:function(){S=seed();save();tab='home';render();toast('Data demo dikembalikan')},
+ 'sw-hide':function(){S.hide=!S.hide;save();render()},
+ 'sw-bio':function(){S.bio=!S.bio;save();render()},
+ close:function(){closeFlow()},
+ back:function(){if(!F)return;if(F.step>0&&!F.done){F.step--;renderFlow()}else closeFlow()},
+ stab:function(t){F.data.tab=t.dataset.t;renderFlow()},
+ merch:function(t){stopCam();var m=MERCH[+t.dataset.i];openFlow('pay',{m:m,amount:m.fixed||0})},
+ pick:function(t){F.data.to={n:t.dataset.n,p:t.dataset.p};F.step=1;renderFlow()},
+ setamt:function(t){F.data.amount=+t.dataset.v;var i=$('#amt');if(i)i.value=fmtAmt(F.data.amount);sync()},
+ bank:function(t){F.data.bank=BANKS.filter(function(b){return b.id===t.dataset.id})[0];renderFlow(true)},
+ opt:function(t){F.data.opt=+t.dataset.v;renderFlow(true)},
+ next:function(){var d=F.data;
+  if(F.name==='bill'&&F.step===0&&BILLS[d.kind].mode==='inquiry')d.inq=infoBill(d.kind,d.cid);
+  if(F.name==='request'&&F.step===0)d.note=($('#note')||{}).value||'';
+  F.step++;if(F.name==='request')F.done=true;renderFlow()},
+ 'go-send':function(){var d=F.data;if(lowBal(d.amount))return;askPin(function(){d.tx=addTx({type:'out',title:'Ke '+d.to.n,sub:'Kirim uang'+(d.note?' · '+d.note:''),amt:-d.amount});F.step=3;F.done=true;renderFlow()})},
+ 'go-topup':function(){var d=F.data;d.tx=addTx({type:'in',title:'Top up '+d.bank.n,sub:'Virtual account',amt:d.amount});F.step=2;F.done=true;renderFlow()},
+ 'go-bill':function(){var d=F.data,B=BILLS[d.kind],amt=B.mode==='nominal'?d.opt:d.inq.amount,tot=amt+B.adm;if(lowBal(tot))return;
+  askPin(function(){if(d.kind==='listrik'){var s='';for(var i=0;i<20;i++)s+=Math.floor(Math.random()*10);d.token=group4(s)}
+   d.tx=addTx({type:'out',title:B.prod,sub:'ID '+group4(d.cid),amt:-tot});F.step=2;F.done=true;renderFlow()})},
+ 'go-pay':function(){var d=F.data,m=d.m,a=m.fixed||d.amount;if(lowBal(a))return;
+  askPin(function(){d.tx=addTx({type:'out',title:m.n,sub:'Bayar QR',amt:-a});d.cb=0;
+   if(a>=20000){d.cb=Math.floor(a*0.02);addTx({type:'in',title:'Cashback '+m.n,sub:'Promo cashback 2%',amt:d.cb})}
+   F.step=1;F.done=true;renderFlow()})},
+ pickc:function(){navigator.contacts.select(['name','tel'],{multiple:false}).then(function(r){var c=r&&r[0];if(!c||!c.tel||!c.tel[0])return;var p=c.tel[0].replace(/\D/g,'').replace(/^\+?62/,'0');F.data.to={n:(c.name&&c.name[0])||fmtPhone(p),p:p};F.step=1;renderFlow()},function(){})},
+ qrtxt:function(){var v=($('#qrtxt')||{}).value||'';if(!v.trim()){toast('Tempel kode QRIS dulu');return}gotQR(v)},
+ admin:function(){openFlow('admin')},
+ chpin:function(){changePin()},
+ 'adm-login':function(){var u=($('#adm-u').value||'').trim().toLowerCase(),p=$('#adm-p').value||'';if(u==='nafis'&&p==='0808'){F.step=1;F.data.amount=0;renderFlow()}else{$('#hint').textContent='Nama atau kode admin salah.'}},
+ 'adm-add':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}addTx({type:'in',title:'Penyesuaian admin',sub:'Tambah saldo demo',amt:a});F.data.amount=0;renderFlow(true);toast('Saldo ditambah '+rp(a))},
+ 'adm-sub':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}if(a>S.bal){toast('Nominal melebihi saldo');return}addTx({type:'out',title:'Penyesuaian admin',sub:'Kurangi saldo demo',amt:-a});F.data.amount=0;renderFlow(true);toast('Saldo dikurangi '+rp(a))},
+ 'adm-set':function(){var a=F.data.amount||0;if(a<1){toast('Isi nominal dulu');return}var diff=a-S.bal;if(!diff){toast('Saldo sudah '+rp(a));return}addTx({type:diff>0?'in':'out',title:'Penyesuaian admin',sub:'Set saldo demo',amt:diff});F.data.amount=0;renderFlow(true);toast('Saldo diatur ke '+rp(a))},
+ 'reset-adm':function(){S=seed();save();F.data.amount=0;renderFlow(true);toast('Data demo dikembalikan')},
+ pinx:function(){$('#pin').hidden=true;pinCb=null;pinMode=null;newPin='';pinBuf=''},
+ k:function(t){if(pinBuf.length>=6)return;pinBuf+=t.dataset.k;drawPin('');if(pinBuf.length===6)setTimeout(pinDone,140)},
+ kb:function(){pinBuf=pinBuf.slice(0,-1);drawPin('')},
+ fp:function(){if(S.bio&&!pinMode)pinOk()}
+};
+document.addEventListener('click',function(e){var t=e.target.closest('[data-act]');if(!t)return;var f=A[t.dataset.act];if(f)f(t)});
+document.addEventListener('input',function(e){var t=e.target;if(!F)return;
+ if(t.hasAttribute('data-amt')){var v=Math.min(num(t.value),999999999);F.data.amount=v;t.value=fmtAmt(v);sync()}
+ else if(t.id==='note')F.data.note=t.value;
+ else if(t.id==='to'){$('#clist').innerHTML=contactList(t.value)}
+ else if(t.id==='cid'){F.data.cid=t.value.replace(/\D/g,'');t.value=F.data.cid;sync()}});
+
+document.addEventListener('change',function(e){var t=e.target;if(t.id!=='qrfile'||!t.files[0])return;
+ var u=URL.createObjectURL(t.files[0]),im=new Image();
+ im.onload=function(){decodeQR(im,im.naturalWidth,im.naturalHeight,1400).then(function(r){URL.revokeObjectURL(u);if(r)gotQR(r);else toast('QR tidak terbaca. Coba foto yang lebih jelas')})};
+ im.onerror=function(){toast('Gambar tidak bisa dibuka')};im.src=u;t.value=''});
+
+/* ---------- menu bawah: kaca bisa digeser ---------- */
+function placeLens(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens');if(!nav||!lens)return;
+ var b=nav.querySelector('.nb[aria-current="page"]');if(!b){lens.style.opacity=0;return}
+ var nr=nav.getBoundingClientRect(),br=b.getBoundingClientRect();
+ lens.style.opacity=1;lens.style.width=(br.width-8)+'px';lens.style.transform='translateX('+(br.left-nr.left+4)+'px)';
+ if(!nav.classList.contains('ready')){void lens.offsetWidth;nav.classList.add('ready')}}
+(function(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens'),st=null,swallow=false;
+ function tabsBtn(){return [].slice.call(nav.querySelectorAll('.nb[data-tab]'))}
+ function geo(){var nr=nav.getBoundingClientRect(),bs=tabsBtn(),r=bs.map(function(b){var x=b.getBoundingClientRect();return {b:b,l:x.left-nr.left+4,w:x.width-8}});return r}
+ function nearest(left,w){var r=geo(),c=left+w/2,best=r[0];r.forEach(function(o){if(Math.abs(o.l+o.w/2-c)<Math.abs(best.l+best.w/2-c))best=o});return best}
+ nav.addEventListener('pointerdown',function(e){var g=geo(),cur=g.filter(function(o){return o.b.getAttribute('aria-current')==='page'})[0];if(!cur)return;st={x:e.clientX,left:cur.l,w:cur.w,drag:false,id:e.pointerId,min:g[0].l,max:g[g.length-1].l}});
+ nav.addEventListener('pointermove',function(e){if(!st)return;var dx=e.clientX-st.x;
+  if(!st.drag){if(Math.abs(dx)<8)return;st.drag=true;nav.classList.add('dragging');try{nav.setPointerCapture(st.id)}catch(_){}}
+  var left=Math.max(st.min,Math.min(st.max,st.left+dx));st.cur=left;
+  lens.style.transform='translateX('+left+'px) scale(1.14,1.1)';
+  var n=nearest(left,st.w);tabsBtn().forEach(function(b){b.classList.toggle('peek',b===n.b)})});
+ function end(){if(!st)return;var s=st;st=null;if(!s.drag)return;
+  nav.classList.remove('dragging');swallow=true;setTimeout(function(){swallow=false},60);
+  var n=nearest(s.cur==null?s.left:s.cur,s.w);tabsBtn().forEach(function(b){b.classList.remove('peek')});
+  if(n.b.dataset.tab&&n.b.dataset.tab!==tab){tab=n.b.dataset.tab;render();window.scrollTo(0,0)}else placeLens()}
+ nav.addEventListener('pointerup',end);nav.addEventListener('pointercancel',end);
+ nav.addEventListener('click',function(e){if(swallow){e.stopPropagation();e.preventDefault()}},true);
+ window.addEventListener('resize',placeLens);window.addEventListener('load',placeLens)})();
+
+render();
+})();
+</script>
+
+</body></html>
