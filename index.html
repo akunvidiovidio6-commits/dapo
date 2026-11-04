@@ -278,6 +278,21 @@ body::before{background:radial-gradient(58vmax 58vmax at 6% -4%,rgba(40,210,190,
 .nav::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;z-index:2;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,255,255,.12) 35%,rgba(255,255,255,.08) 62%,rgba(255,255,255,.85));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
 .lens{background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.1) 58%,rgba(255,255,255,.34))}
 .nb{transition:color .15s}
+
+/* kaca cair ala referensi: navbar abu berasap + lensa pelangi */
+:root:root:root .nav{background:rgba(84,78,90,.5);-webkit-backdrop-filter:blur(22px) saturate(130%);backdrop-filter:blur(22px) saturate(130%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 0 rgba(255,255,255,.18),0 14px 34px -10px rgba(0,0,0,.5);border:0;border-radius:36px;padding:4px 8px}
+.nav::before,.nav::after{display:none}
+:root:root:root .nav .nb,:root:root:root .nav .nb[aria-current="page"],:root:root:root .nav.dragging .nb.peek,:root:root:root .nav.dragging .nb[aria-current="page"]{color:#fff;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+:root:root:root .nav .lens-in .nb.under{color:#93d3ee}
+.nav .lens-in{position:absolute;z-index:auto;pointer-events:none;will-change:transform;margin:0}
+.lens-in .fab{visibility:hidden}
+:root:root:root .nav .lens{top:4px;bottom:auto;height:0;overflow:hidden;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.06) 55%,rgba(255,255,255,.14));box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 0 14px rgba(255,255,255,.18),0 6px 16px -6px rgba(0,0,0,.4);transform:none}
+.lens::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:3px;background:conic-gradient(from 210deg,#ff2d6f,#ffb02e,#7dffb0,#2db8ff,#8a5cff,#ff2d6f);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:.32;filter:blur(.5px);transition:opacity .25s;pointer-events:none}
+.nav.dragging .lens::after{opacity:1}
+:root:root:root .nav.ready .lens{transition:left .46s cubic-bezier(.3,1.35,.5,1),width .46s cubic-bezier(.3,1.35,.5,1),top .25s,height .25s}
+:root:root:root .nav.ready .lens-in{transition:left .46s cubic-bezier(.3,1.35,.5,1),top .25s,transform .25s,transform-origin .46s cubic-bezier(.3,1.35,.5,1)}
+:root:root:root .nav.dragging .lens{transition:top .2s,height .2s;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),inset 0 0 18px rgba(255,255,255,.22),0 16px 30px -10px rgba(0,0,0,.55)}
+:root:root:root .nav.dragging .lens-in{transition:top .2s,transform .2s}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes sweep{from{top:28px}to{top:calc(100% - 30px)}}
 @keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)}}
@@ -285,7 +300,7 @@ body::before{background:radial-gradient(58vmax 58vmax at 6% -4%,rgba(40,210,190,
 </style>
 
 <div class="shell"><main id="view"></main></div>
-<nav class="nav" aria-label="Menu utama"><i class="lens" id="lens"></i><div class="nav-in" id="nav"></div></nav>
+<nav class="nav" aria-label="Menu utama"><div class="lens" id="lens"><div class="nav-in lens-in" id="lensIn" aria-hidden="true"></div></div><div class="nav-in" id="nav"></div></nav>
 <div id="flow" class="flow" hidden></div>
 <div id="pin" class="pinov" hidden></div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -621,25 +636,32 @@ document.addEventListener('change',function(e){var t=e.target;if(t.id!=='qrfile'
  im.onload=function(){decodeQR(im,im.naturalWidth,im.naturalHeight,1400).then(function(r){URL.revokeObjectURL(u);if(r)gotQR(r);else toast('QR tidak terbaca. Coba foto yang lebih jelas')})};
  im.onerror=function(){toast('Gambar tidak bisa dibuka')};im.src=u;t.value=''});
 
-/* ---------- menu bawah: kaca bisa digeser ---------- */
-function placeLens(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens');if(!nav||!lens)return;
- var b=nav.querySelector('.nb[aria-current="page"]');if(!b){lens.style.opacity=0;return}
- var nr=nav.getBoundingClientRect(),br=b.getBoundingClientRect();
- lens.style.opacity=1;lens.style.width=(br.width-8)+'px';lens.style.transform='translateX('+(br.left-nr.left+4)+'px)';
+/* ---------- menu bawah: kaca cair yang bisa digeser ---------- */
+function setLens(left,w,drag){var nav=document.querySelector('.nav'),lens=document.getElementById('lens'),li=document.getElementById('lensIn'),ni=document.getElementById('nav');if(!nav||!lens||!li||!ni)return;
+ var nr=nav.getBoundingClientRect(),ir=ni.getBoundingClientRect(),ex=drag?22:0,ey=drag?10:0;
+ var L=left-ex/2,W=w+ex,T=4-ey,H=nr.height-8+2*ey,ox=ir.left-nr.left,cx=left+w/2;
+ lens.style.left=L+'px';lens.style.width=W+'px';lens.style.top=T+'px';lens.style.height=H+'px';
+ li.style.width=ir.width+'px';li.style.height=ir.height+'px';li.style.left=(ox-L)+'px';li.style.top=(ir.top-nr.top-T)+'px';
+ li.style.transformOrigin=(cx-ox)+'px 50%';li.style.transform='scale('+(drag?1.22:1)+')';
+ var real=[].slice.call(ni.querySelectorAll('.nb[data-tab]')),cl=[].slice.call(li.querySelectorAll('.nb[data-tab]'));
+ real.forEach(function(b,i){var r=b.getBoundingClientRect(),c=r.left-nr.left+r.width/2;if(cl[i])cl[i].classList.toggle('under',Math.abs(c-cx)<r.width/2)})}
+function placeLens(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens'),li=document.getElementById('lensIn'),ni=document.getElementById('nav');if(!nav||!lens||!li||!ni)return;
+ var b=ni.querySelector('.nb[aria-current="page"]');if(!b){lens.style.opacity=0;return}
+ li.innerHTML=ni.innerHTML;li.setAttribute('inert','');
+ var nr=nav.getBoundingClientRect(),br=b.getBoundingClientRect();lens.style.opacity=1;
+ setLens(br.left-nr.left+4,br.width-8,false);
  if(!nav.classList.contains('ready')){void lens.offsetWidth;nav.classList.add('ready')}}
-(function(){var nav=document.querySelector('.nav'),lens=document.getElementById('lens'),st=null,swallow=false;
- function tabsBtn(){return [].slice.call(nav.querySelectorAll('.nb[data-tab]'))}
- function geo(){var nr=nav.getBoundingClientRect(),bs=tabsBtn(),r=bs.map(function(b){var x=b.getBoundingClientRect();return {b:b,l:x.left-nr.left+4,w:x.width-8}});return r}
+(function(){var nav=document.querySelector('.nav'),st=null,swallow=false;
+ function btns(){return [].slice.call(nav.querySelectorAll('#nav .nb[data-tab]'))}
+ function geo(){var nr=nav.getBoundingClientRect();return btns().map(function(b){var x=b.getBoundingClientRect();return {b:b,l:x.left-nr.left+4,w:x.width-8}})}
  function nearest(left,w){var r=geo(),c=left+w/2,best=r[0];r.forEach(function(o){if(Math.abs(o.l+o.w/2-c)<Math.abs(best.l+best.w/2-c))best=o});return best}
- nav.addEventListener('pointerdown',function(e){var g=geo(),cur=g.filter(function(o){return o.b.getAttribute('aria-current')==='page'})[0];if(!cur)return;st={x:e.clientX,left:cur.l,w:cur.w,drag:false,id:e.pointerId,min:g[0].l,max:g[g.length-1].l}});
+ nav.addEventListener('pointerdown',function(e){var g=geo(),cur=g.filter(function(o){return o.b.getAttribute('aria-current')==='page'})[0];if(!cur)return;st={x:e.clientX,left:cur.l,w:cur.w,drag:false,id:e.pointerId,min:g[0].l,max:g[g.length-1].l,cur:cur.l}});
  nav.addEventListener('pointermove',function(e){if(!st)return;var dx=e.clientX-st.x;
-  if(!st.drag){if(Math.abs(dx)<8)return;st.drag=true;nav.classList.add('dragging');try{nav.setPointerCapture(st.id)}catch(_){}}
-  var left=Math.max(st.min,Math.min(st.max,st.left+dx));st.cur=left;
-  lens.style.transform='translateX('+left+'px) scale(1.14,1.1)';
-  var n=nearest(left,st.w);tabsBtn().forEach(function(b){b.classList.toggle('peek',b===n.b)})});
+  if(!st.drag){if(Math.abs(dx)<6)return;st.drag=true;nav.classList.add('dragging');try{nav.setPointerCapture(st.id)}catch(_){}}
+  st.cur=Math.max(st.min,Math.min(st.max,st.left+dx));setLens(st.cur,st.w,true)});
  function end(){if(!st)return;var s=st;st=null;if(!s.drag)return;
   nav.classList.remove('dragging');swallow=true;setTimeout(function(){swallow=false},60);
-  var n=nearest(s.cur==null?s.left:s.cur,s.w);tabsBtn().forEach(function(b){b.classList.remove('peek')});
+  var n=nearest(s.cur,s.w);
   if(n.b.dataset.tab&&n.b.dataset.tab!==tab){tab=n.b.dataset.tab;render();window.scrollTo(0,0)}else placeLens()}
  nav.addEventListener('pointerup',end);nav.addEventListener('pointercancel',end);
  nav.addEventListener('click',function(e){if(swallow){e.stopPropagation();e.preventDefault()}},true);
